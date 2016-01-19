@@ -9,13 +9,58 @@
 /* Begin PBXBuildFile section */
 		7D49FC091C42036700B73A7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC081C42036700B73A7C /* main.m */; };
 		7D49FC0C1C42036800B73A7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC0B1C42036800B73A7C /* AppDelegate.m */; };
-		7D49FC0F1C42036800B73A7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC0E1C42036800B73A7C /* ViewController.m */; };
+		7D49FC0F1C42036800B73A7C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC0E1C42036800B73A7C /* MainViewController.m */; };
 		7D49FC121C42036800B73A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49FC101C42036800B73A7C /* Main.storyboard */; };
 		7D49FC151C42036800B73A7C /* Markascore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC131C42036800B73A7C /* Markascore.xcdatamodeld */; };
 		7D49FC171C42036800B73A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D49FC161C42036800B73A7C /* Assets.xcassets */; };
 		7D49FC1A1C42036800B73A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49FC181C42036800B73A7C /* LaunchScreen.storyboard */; };
 		7D49FC251C42036800B73A7C /* MarkascoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC241C42036800B73A7C /* MarkascoreTests.m */; };
 		7D49FC301C42036800B73A7C /* MarkascoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC2F1C42036800B73A7C /* MarkascoreUITests.m */; };
+		7DF4789A1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
+		7DF4789B1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
+		7DF4789C1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
+		7DF478AF1C42F5400047A9A9 /* Sport+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478AC1C42F5400047A9A9 /* Sport+CoreDataProperties.m */; };
+		7DF478B01C42F5400047A9A9 /* Sport+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478AC1C42F5400047A9A9 /* Sport+CoreDataProperties.m */; };
+		7DF478B11C42F5400047A9A9 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478AE1C42F5400047A9A9 /* Sport.m */; };
+		7DF478B21C42F5400047A9A9 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478AE1C42F5400047A9A9 /* Sport.m */; };
+		7DF478B51C4377230047A9A9 /* SportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478B41C4377230047A9A9 /* SportTableViewController.m */; };
+		7DF478B61C4377230047A9A9 /* SportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478B41C4377230047A9A9 /* SportTableViewController.m */; };
+		7DF478B71C4377230047A9A9 /* SportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478B41C4377230047A9A9 /* SportTableViewController.m */; };
+		7DF478BC1C44A0B80047A9A9 /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478B91C44A0B80047A9A9 /* Game+CoreDataProperties.m */; };
+		7DF478BD1C44A0B80047A9A9 /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478B91C44A0B80047A9A9 /* Game+CoreDataProperties.m */; };
+		7DF478BE1C44A0B80047A9A9 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478BB1C44A0B80047A9A9 /* Game.m */; };
+		7DF478BF1C44A0B80047A9A9 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478BB1C44A0B80047A9A9 /* Game.m */; };
+		7DF478C21C4574F50047A9A9 /* OptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C11C4574F50047A9A9 /* OptionsTableViewController.m */; };
+		7DF478C31C4574F50047A9A9 /* OptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C11C4574F50047A9A9 /* OptionsTableViewController.m */; };
+		7DF478C41C4574F50047A9A9 /* OptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C11C4574F50047A9A9 /* OptionsTableViewController.m */; };
+		7DF478CA1C487E650047A9A9 /* Options+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C71C487E650047A9A9 /* Options+CoreDataProperties.m */; };
+		7DF478CB1C487E650047A9A9 /* Options+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C71C487E650047A9A9 /* Options+CoreDataProperties.m */; };
+		7DF478CC1C487E650047A9A9 /* Options+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C71C487E650047A9A9 /* Options+CoreDataProperties.m */; };
+		7DF478CD1C487E650047A9A9 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C91C487E650047A9A9 /* Options.m */; };
+		7DF478CE1C487E650047A9A9 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C91C487E650047A9A9 /* Options.m */; };
+		7DF478CF1C487E650047A9A9 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C91C487E650047A9A9 /* Options.m */; };
+		7DF478DC1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */; };
+		7DF478DD1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */; };
+		7DF478DE1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */; };
+		7DF478DF1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */; };
+		7DF478E01C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */; };
+		7DF478E11C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */; };
+		7DF478E21C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */; };
+		7DF478E31C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */; };
+		7DF478E41C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */; };
+		7DF478E51C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */; };
+		7DF478E61C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */; };
+		7DF478E71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */; };
+		7DF478E81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */; };
+		7DF478E91C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */; };
+		7DF478EA1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */; };
+		7DF478EB1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */; };
+		7DF478EC1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */; };
+		7DF478ED1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */; };
+		7DF478EE1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */; };
+		7DF478EF1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */; };
+		7DF478F11C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */; };
+		7DF478F21C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +85,8 @@
 		7D49FC081C42036700B73A7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D49FC0A1C42036700B73A7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7D49FC0B1C42036800B73A7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7D49FC0D1C42036800B73A7C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7D49FC0E1C42036800B73A7C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7D49FC0D1C42036800B73A7C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7D49FC0E1C42036800B73A7C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7D49FC111C42036800B73A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D49FC141C42036800B73A7C /* Markascore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Markascore.xcdatamodel; sourceTree = "<group>"; };
 		7D49FC161C42036800B73A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +98,36 @@
 		7D49FC2B1C42036800B73A7C /* MarkascoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkascoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49FC2F1C42036800B73A7C /* MarkascoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkascoreUITests.m; sourceTree = "<group>"; };
 		7D49FC311C42036800B73A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF478981C42F2CA0047A9A9 /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
+		7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
+		7DF478AB1C42F5400047A9A9 /* Sport+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sport+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7DF478AC1C42F5400047A9A9 /* Sport+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sport+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7DF478AD1C42F5400047A9A9 /* Sport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sport.h; sourceTree = "<group>"; };
+		7DF478AE1C42F5400047A9A9 /* Sport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sport.m; sourceTree = "<group>"; };
+		7DF478B31C4377230047A9A9 /* SportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportTableViewController.h; sourceTree = "<group>"; };
+		7DF478B41C4377230047A9A9 /* SportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportTableViewController.m; sourceTree = "<group>"; };
+		7DF478B81C44A0B80047A9A9 /* Game+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7DF478B91C44A0B80047A9A9 /* Game+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7DF478BA1C44A0B80047A9A9 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		7DF478BB1C44A0B80047A9A9 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		7DF478C01C4574F50047A9A9 /* OptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTableViewController.h; sourceTree = "<group>"; };
+		7DF478C11C4574F50047A9A9 /* OptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTableViewController.m; sourceTree = "<group>"; };
+		7DF478C51C46BFC20047A9A9 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = TODO.md; path = Markascore/TODO.md; sourceTree = "<group>"; };
+		7DF478C61C487E650047A9A9 /* Options+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Options+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7DF478C71C487E650047A9A9 /* Options+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Options+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7DF478C81C487E650047A9A9 /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
+		7DF478C91C487E650047A9A9 /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Options.m; sourceTree = "<group>"; };
+		7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-60@2x.png"; sourceTree = "<group>"; };
+		7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-60@3x.png"; sourceTree = "<group>"; };
+		7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-76.png"; sourceTree = "<group>"; };
+		7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-76@2x.png"; sourceTree = "<group>"; };
+		7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40.png"; sourceTree = "<group>"; };
+		7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40@2x.png"; sourceTree = "<group>"; };
+		7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40@3x.png"; sourceTree = "<group>"; };
+		7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small.png"; sourceTree = "<group>"; };
+		7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@2x.png"; sourceTree = "<group>"; };
+		7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@3x.png"; sourceTree = "<group>"; };
+		7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-83_5@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +158,7 @@
 		7D49FBFB1C42036700B73A7C = {
 			isa = PBXGroup;
 			children = (
+				7DF478C51C46BFC20047A9A9 /* TODO.md */,
 				7D49FC061C42036700B73A7C /* Markascore */,
 				7D49FC231C42036800B73A7C /* MarkascoreTests */,
 				7D49FC2E1C42036800B73A7C /* MarkascoreUITests */,
@@ -103,15 +179,22 @@
 		7D49FC061C42036700B73A7C /* Markascore */ = {
 			isa = PBXGroup;
 			children = (
+				7D49FC1B1C42036800B73A7C /* Info.plist */,
 				7D49FC0A1C42036700B73A7C /* AppDelegate.h */,
 				7D49FC0B1C42036800B73A7C /* AppDelegate.m */,
-				7D49FC0D1C42036800B73A7C /* ViewController.h */,
-				7D49FC0E1C42036800B73A7C /* ViewController.m */,
-				7D49FC101C42036800B73A7C /* Main.storyboard */,
-				7D49FC161C42036800B73A7C /* Assets.xcassets */,
 				7D49FC181C42036800B73A7C /* LaunchScreen.storyboard */,
-				7D49FC1B1C42036800B73A7C /* Info.plist */,
+				7D49FC101C42036800B73A7C /* Main.storyboard */,
+				7D49FC0D1C42036800B73A7C /* MainViewController.h */,
+				7D49FC0E1C42036800B73A7C /* MainViewController.m */,
+				7DF478C01C4574F50047A9A9 /* OptionsTableViewController.h */,
+				7DF478C11C4574F50047A9A9 /* OptionsTableViewController.m */,
+				7DF478981C42F2CA0047A9A9 /* SportsTableViewController.h */,
+				7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */,
+				7DF478B31C4377230047A9A9 /* SportTableViewController.h */,
+				7DF478B41C4377230047A9A9 /* SportTableViewController.m */,
+				7D49FC161C42036800B73A7C /* Assets.xcassets */,
 				7D49FC131C42036800B73A7C /* Markascore.xcdatamodeld */,
+				7DF478D01C487E6E0047A9A9 /* Managed Object Classes */,
 				7D49FC071C42036700B73A7C /* Supporting Files */,
 			);
 			path = Markascore;
@@ -120,6 +203,7 @@
 		7D49FC071C42036700B73A7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DF478D11C4C93AC0047A9A9 /* Icons */,
 				7D49FC081C42036700B73A7C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +225,43 @@
 				7D49FC311C42036800B73A7C /* Info.plist */,
 			);
 			path = MarkascoreUITests;
+			sourceTree = "<group>";
+		};
+		7DF478D01C487E6E0047A9A9 /* Managed Object Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7DF478C61C487E650047A9A9 /* Options+CoreDataProperties.h */,
+				7DF478C71C487E650047A9A9 /* Options+CoreDataProperties.m */,
+				7DF478C81C487E650047A9A9 /* Options.h */,
+				7DF478C91C487E650047A9A9 /* Options.m */,
+				7DF478AB1C42F5400047A9A9 /* Sport+CoreDataProperties.h */,
+				7DF478AC1C42F5400047A9A9 /* Sport+CoreDataProperties.m */,
+				7DF478AD1C42F5400047A9A9 /* Sport.h */,
+				7DF478AE1C42F5400047A9A9 /* Sport.m */,
+				7DF478B81C44A0B80047A9A9 /* Game+CoreDataProperties.h */,
+				7DF478B91C44A0B80047A9A9 /* Game+CoreDataProperties.m */,
+				7DF478BA1C44A0B80047A9A9 /* Game.h */,
+				7DF478BB1C44A0B80047A9A9 /* Game.m */,
+			);
+			name = "Managed Object Classes";
+			sourceTree = "<group>";
+		};
+		7DF478D11C4C93AC0047A9A9 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */,
+				7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */,
+				7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */,
+				7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */,
+				7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */,
+				7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */,
+				7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */,
+				7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */,
+				7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */,
+				7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */,
+				7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +331,7 @@
 				TargetAttributes = {
 					7D49FC031C42036700B73A7C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SKWNJR3SRG;
 					};
 					7D49FC1F1C42036800B73A7C = {
 						CreatedOnToolsVersion = 7.2;
@@ -246,8 +368,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF478EA1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */,
 				7D49FC1A1C42036800B73A7C /* LaunchScreen.storyboard in Resources */,
+				7DF478E01C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */,
+				7DF478EC1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */,
+				7DF478E41C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */,
+				7DF478E61C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */,
+				7DF478E21C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */,
+				7DF478DC1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */,
+				7DF478F11C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */,
+				7DF478EE1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */,
+				7DF478E81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */,
 				7D49FC171C42036800B73A7C /* Assets.xcassets in Resources */,
+				7DF478DE1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */,
 				7D49FC121C42036800B73A7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +396,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF478EF1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */,
+				7DF478E31C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */,
+				7DF478DF1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */,
+				7DF478E11C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */,
+				7DF478ED1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */,
+				7DF478E71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */,
+				7DF478F21C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */,
+				7DF478E51C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */,
+				7DF478DD1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */,
+				7DF478EB1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */,
+				7DF478E91C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +417,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D49FC0F1C42036800B73A7C /* ViewController.m in Sources */,
+				7DF478BC1C44A0B80047A9A9 /* Game+CoreDataProperties.m in Sources */,
+				7DF478CD1C487E650047A9A9 /* Options.m in Sources */,
+				7DF478B11C42F5400047A9A9 /* Sport.m in Sources */,
+				7DF478CA1C487E650047A9A9 /* Options+CoreDataProperties.m in Sources */,
+				7DF478AF1C42F5400047A9A9 /* Sport+CoreDataProperties.m in Sources */,
+				7D49FC0F1C42036800B73A7C /* MainViewController.m in Sources */,
 				7D49FC0C1C42036800B73A7C /* AppDelegate.m in Sources */,
+				7DF478BE1C44A0B80047A9A9 /* Game.m in Sources */,
+				7DF478C21C4574F50047A9A9 /* OptionsTableViewController.m in Sources */,
+				7DF478B51C4377230047A9A9 /* SportTableViewController.m in Sources */,
 				7D49FC091C42036700B73A7C /* main.m in Sources */,
 				7D49FC151C42036800B73A7C /* Markascore.xcdatamodeld in Sources */,
+				7DF4789A1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +437,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF478B01C42F5400047A9A9 /* Sport+CoreDataProperties.m in Sources */,
+				7DF4789B1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */,
+				7DF478C31C4574F50047A9A9 /* OptionsTableViewController.m in Sources */,
+				7DF478B21C42F5400047A9A9 /* Sport.m in Sources */,
+				7DF478BD1C44A0B80047A9A9 /* Game+CoreDataProperties.m in Sources */,
+				7DF478CB1C487E650047A9A9 /* Options+CoreDataProperties.m in Sources */,
+				7DF478B61C4377230047A9A9 /* SportTableViewController.m in Sources */,
+				7DF478BF1C44A0B80047A9A9 /* Game.m in Sources */,
+				7DF478CE1C487E650047A9A9 /* Options.m in Sources */,
 				7D49FC251C42036800B73A7C /* MarkascoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +454,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF478B71C4377230047A9A9 /* SportTableViewController.m in Sources */,
+				7DF478CC1C487E650047A9A9 /* Options+CoreDataProperties.m in Sources */,
+				7DF478CF1C487E650047A9A9 /* Options.m in Sources */,
+				7DF4789C1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */,
+				7DF478C41C4574F50047A9A9 /* OptionsTableViewController.m in Sources */,
 				7D49FC301C42036800B73A7C /* MarkascoreUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Markascore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore;
@@ -428,6 +596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Markascore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore;
@@ -502,6 +671,7 @@
 				7D49FC361C42036800B73A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D49FC371C42036800B73A7C /* Build configuration list for PBXNativeTarget "MarkascoreTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +680,7 @@
 				7D49FC391C42036800B73A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D49FC3A1C42036800B73A7C /* Build configuration list for PBXNativeTarget "MarkascoreUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +689,7 @@
 				7D49FC3C1C42036800B73A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

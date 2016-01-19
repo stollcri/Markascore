@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="period" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreThem" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreUs" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sportName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeCountUp" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timeCountUpCum" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timeMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeRunning" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timeSaveMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeSaveSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeStartedAt" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Options" representedClassName="Options" syncable="YES">
+        <attribute name="enableUndo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="preventSleep" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="teamA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theme" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Sport" representedClassName="Sport" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="periodQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="periodTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="periodTimeUp" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="periodTimeUpCum" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeAname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeApoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeBname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeBpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeCname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeCpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeDname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeDpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Sport" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Game" positionX="-45" positionY="90" width="128" height="225"/>
+        <element name="Options" positionX="-27" positionY="153" width="128" height="120"/>
+    </elements>
 </model>
