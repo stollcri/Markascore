@@ -21,6 +21,15 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     MainViewController *controller = (MainViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    } else {
+        //NSLog(@"WCSession is NOT Supported");
+    }
+    
     return YES;
 }
 
@@ -127,6 +136,120 @@
             abort();
         }
     }
+}
+
+#pragma mark - Watch connectivity
+
+- (NSDictionary *)prepareDataforWatch {
+    //NSLog(@"prepareDataforWatach");
+    NSMutableDictionary *watchData = [[NSMutableDictionary alloc] init];
+
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSError *error = nil;
+    NSArray *fetchedObjects = nil;
+    
+    NSEntityDescription *optionsEntity = [NSEntityDescription entityForName:@"Options" inManagedObjectContext:context];
+    [fetch setEntity:optionsEntity];
+    error = nil;
+    fetchedObjects = [context executeFetchRequest:fetch error:&error];
+    if ([fetchedObjects count] > 0) {
+        Options *moOptions = fetchedObjects[0];
+        [watchData setObject:moOptions.teamA forKey:@"teamA"];
+        [watchData setObject:moOptions.teamB forKey:@"teamB"];
+    } else {
+        //
+        // No data is saved, the iOS app hasn't been used
+        // The watch app should use its defaults, so return nil
+        //
+        return nil;
+    }
+
+    NSEntityDescription *gameEntity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:context];
+    [fetch setEntity:gameEntity];
+    error = nil;
+    fetchedObjects = [context executeFetchRequest:fetch error:&error];
+    if ([fetchedObjects count] > 0) {
+        Game *moGame = fetchedObjects[0];
+        [watchData setObject:moGame.sportName forKey:@"gameSport"];
+        [watchData setObject:moGame.period forKey:@"gamePeriod"];
+        /*
+        [watchData setObject:moGame.scoreUs forKey:@"gameScoreUs"];
+        [watchData setObject:moGame.scoreThem forKey:@"gameScoreThem"];
+         */
+        [watchData setObject:moGame.timeCountUp forKey:@"gameTimeCountUp"];
+        [watchData setObject:moGame.timeCountUpCum forKey:@"gameTimeCountUpCum"];
+        /*
+        [watchData setObject:moGame.timeElapsed forKey:@"gameTimeElapsed"];
+        [watchData setObject:moGame.timeElapsedMinutes forKey:@"gameTimeElapsedMinutes"];
+        [watchData setObject:moGame.timeElapsedSeconds forKey:@"gameTimeElapsedSeconds"];
+        [watchData setObject:moGame.timeRunning forKey:@"gameTimeRunning"];
+        [watchData setObject:moGame.timeStartedAt forKey:@"gameTimeStartedAt"];
+        [watchData setObject:moGame.timeSaveMinutes forKey:@"gameTimeSaveMinutes"];
+        [watchData setObject:moGame.timeSaveSeconds forKey:@"gameTimeSaveSeconds"];
+         */
+    }
+
+    NSEntityDescription *sportsEntity = [NSEntityDescription entityForName:@"Sport" inManagedObjectContext:context];
+    [fetch setEntity:sportsEntity];
+    error = nil;
+    fetchedObjects = [context executeFetchRequest:fetch error:&error];
+    Sport *moSport;
+    //NSMutableArray *sportsList = [[NSMutableArray alloc] init];
+    if ([fetchedObjects count] > 0) {
+        for (moSport in fetchedObjects) {
+            /*
+            NSMutableDictionary *currentSport = [[NSMutableDictionary alloc] init];
+            [currentSport setObject:moSport.name forKey:@"name"];
+            [currentSport setObject:moSport.periodQuantity forKey:@"periodQuantity"];
+            [currentSport setObject:moSport.periodTime forKey:@"periodTime"];
+            [currentSport setObject:moSport.scoreTypeEname forKey:@"scoreTypeEname"];
+            [currentSport setObject:moSport.scoreTypeEpoints forKey:@"scoreTypeEpoints"];
+            [currentSport setObject:moSport.scoreTypeFname forKey:@"scoreTypeFname"];
+            [currentSport setObject:moSport.scoreTypeFpoints forKey:@"scoreTypeFpoints"];
+            [currentSport setObject:moSport.periodTimeUp forKey:@"periodTimeUp"];
+            [currentSport setObject:moSport.periodTimeUpCum forKey:@"periodTimeUpCum"];
+            [sportsList addObject:currentSport];
+             */
+            
+            if ([moSport.name isEqualToString:[watchData objectForKey:@"gameSport"]]) {
+                NSLog(@"OK");
+                [watchData setObject:moSport.name forKey:@"currentSportName"];
+                [watchData setObject:moSport.periodQuantity forKey:@"currentSportPeriodQuantity"];
+                [watchData setObject:moSport.periodTime forKey:@"currentSportPeriodTime"];
+                [watchData setObject:moSport.scoreTypeEname forKey:@"currentSportScoreTypeEname"];
+                [watchData setObject:moSport.scoreTypeEpoints forKey:@"currentSportScoreTypeEpoints"];
+                [watchData setObject:moSport.scoreTypeFname forKey:@"currentSportScoreTypeFname"];
+                [watchData setObject:moSport.scoreTypeFpoints forKey:@"currentSportScoreTypeFpoints"];
+                [watchData setObject:moSport.periodTimeUp forKey:@"currentSportPeriodTimeUp"];
+                [watchData setObject:moSport.periodTimeUpCum forKey:@"currentSportPeriodTimeUpCum"];
+            }
+        }
+    }
+    //NSArray *sports = [sportsList copy];
+    //[watchData setObject:sports forKey:@"sports"];
+
+    
+    return watchData;
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
+    NSString *commandValue = [message objectForKey:@"command"];
+    //NSLog(@"iPhone: didReceiveMessage (%@)", commandValue);
+    
+    if ([commandValue isEqualToString:@"SendAppCoreData"]) {
+        NSDictionary *appCoreData = [self prepareDataforWatch];
+        if (appCoreData) {
+            replyHandler(appCoreData);
+        }
+    }
+    
+    //    //Use this to update the UI instantaneously (otherwise, takes a little while)
+    //    dispatch_async(dispatch_get_main_queue(), ^{
+    //        [self.counterData addObject:counterValue];
+    //        [self.mainTableView reloadData];
+    //    });
 }
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Game" representedClassName="Game" syncable="YES">
         <attribute name="period" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="scoreThem" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -7,15 +7,17 @@
         <attribute name="sportName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeCountUp" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="timeCountUpCum" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="timeMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeElapsed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timeElapsedMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeElapsedSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="timeRunning" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="timeSaveMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="timeSaveSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="timeSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="timeStartedAt" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="Options" representedClassName="Options" syncable="YES">
         <attribute name="enableUndo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasWatch" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="preventSleep" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="teamA" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamB" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,10 +37,14 @@
         <attribute name="scoreTypeCpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="scoreTypeDname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scoreTypeDpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeEname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeEpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeFname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeFpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Sport" positionX="-63" positionY="-18" width="128" height="240"/>
-        <element name="Game" positionX="-45" positionY="90" width="128" height="225"/>
-        <element name="Options" positionX="-27" positionY="153" width="128" height="120"/>
+        <element name="Game" positionX="-45" positionY="90" width="128" height="240"/>
+        <element name="Options" positionX="-27" positionY="153" width="128" height="135"/>
+        <element name="Sport" positionX="-63" positionY="-18" width="128" height="300"/>
     </elements>
 </model>

@@ -17,8 +17,9 @@
 @dynamic period;
 @dynamic scoreUs;
 @dynamic scoreThem;
-@dynamic timeMinutes;
-@dynamic timeSeconds;
+@dynamic timeElapsed;
+@dynamic timeElapsedMinutes;
+@dynamic timeElapsedSeconds;
 @dynamic timeRunning;
 @dynamic timeStartedAt;
 @dynamic timeSaveMinutes;

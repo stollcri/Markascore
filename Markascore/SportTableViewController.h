@@ -12,6 +12,7 @@
 @interface SportTableViewController : UITableViewController
 
 @property (strong, nonatomic) Sport *sportDetail;
+@property (strong, nonatomic) NSNumber *hasWatch;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtSportName;
 
@@ -31,6 +32,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtScoreDname;
 @property (weak, nonatomic) IBOutlet UITextField *txtScoreDpoints;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtScoreEname;
+@property (weak, nonatomic) IBOutlet UITextField *txtScoreEpoints;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtScoreFname;
+@property (weak, nonatomic) IBOutlet UITextField *txtScoreFpoints;
 
 - (IBAction)countUpEnable:(id)sender;
 

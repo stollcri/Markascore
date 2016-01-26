@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+//#import <WatchConnectivity/WatchConnectivity.h>
 #import "SportsTableViewController.h"
 #import "OptionsTableViewController.h"
 
@@ -21,8 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    //[self.btnUndo setHidden:YES];
-    
     // Fetch options data
     NSManagedObjectContext *context = [self managedObjectContext];
     NSEntityDescription *optionsEntity = [NSEntityDescription entityForName:@"Options" inManagedObjectContext:context];
@@ -35,13 +34,24 @@
     } else {
         // Fill game entity with dummy data
         Options *moOptions = [NSEntityDescription insertNewObjectForEntityForName:[optionsEntity name] inManagedObjectContext:context];
-        moOptions.teamA = @"Home";
-        moOptions.teamB = @"Guest";
+        moOptions.teamA = @"HOME";
+        moOptions.teamB = @"GUEST";
         moOptions.theme = @0;
         moOptions.enableUndo = @1;
         moOptions.preventSleep = @0;
+        moOptions.hasWatch = @NO;
         self.currentOptions = moOptions;
     }
+    
+    /*
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        if (session.paired && session.watchAppInstalled) {
+            self.currentOptions.hasWatch = @YES;
+            NSLog(@"Watch paired: %d, Watch app installed: %d", session.paired, session.watchAppInstalled);
+        }
+    }
+    */
     
     // Fetch saved game data -- what was the last score time, etc.
     NSEntityDescription *gameEntity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:context];
@@ -77,24 +87,22 @@
         moGame.scoreThem = @0;
         moGame.timeCountUp = @0;
         moGame.timeCountUpCum = @0;
-        moGame.timeMinutes = @0;
-        moGame.timeSeconds = @0;
+        moGame.timeElapsed = [NSDate date];
+        moGame.timeElapsedMinutes = @0;
+        moGame.timeElapsedSeconds = @0;
         moGame.timeRunning = @0;
-        moGame.timeStartedAt = NULL;
+        moGame.timeStartedAt = [NSDate date];
         moGame.timeSaveMinutes = @0;
         moGame.timeSaveSeconds = @0;
         self.currentGame = moGame;
         //NSLog(@"Game NOT fetched");
     }
 
-    // If there is a sport selected
-    if (self.currentSport) {
-        // then update the UI to match
-        [self updateUI];
-    } else {
-        // otherwise force sport selection
-        [self performSegueWithIdentifier:@"showSports" sender:self];
-    }
+//    // If there is a sport selected
+//    if (self.currentSport) {
+//        // then update the UI to match
+//        [self updateUI];
+//    }
     
     // TODO: check on this implementation
     NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(updateTimeFromTimer:) userInfo:nil repeats:YES];
@@ -110,6 +118,8 @@
     if (self.currentSport) {
         // then update the UI to match
         [self updateUI];
+    } else {
+        [self performSegueWithIdentifier:@"showSports" sender:self];
     }
 }
 
@@ -118,6 +128,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showSports"]){
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+        [[segue destinationViewController] setHasWatch:self.currentOptions.hasWatch];
         [self.undoManager removeAllActions];
     } else if ([[segue identifier] isEqualToString:@"showOptions"]){
         OptionsTableViewController *tempVC = [segue destinationViewController];
@@ -140,13 +151,17 @@
             self.currentGame.scoreThem = @0;
             self.currentGame.timeCountUp = self.currentSport.periodTimeUp;
             self.currentGame.timeCountUpCum = self.currentSport.periodTimeUpCum;
-            self.currentGame.timeSeconds = @0;
+            self.currentGame.timeElapsedSeconds = @0;
             self.currentGame.timeRunning = @0;
             self.currentGame.timeStartedAt = NULL;
             self.currentGame.timeSaveMinutes = @0;
             self.currentGame.timeSaveSeconds = @0;
             [self resetTime];
             [self updateUI];
+        }
+        
+        if (!self.currentSport) {
+            [self performSegueWithIdentifier:@"showSports" sender:self];
         }
     }
 }
@@ -306,8 +321,8 @@
 - (void)updatePlayPause {
     if ([self.currentGame.timeRunning boolValue]) {
         self.currentGame.timeRunning = @NO;
-        self.currentGame.timeSaveMinutes = self.currentGame.timeMinutes;
-        self.currentGame.timeSaveSeconds = self.currentGame.timeSeconds;
+        self.currentGame.timeSaveMinutes = self.currentGame.timeElapsedMinutes;
+        self.currentGame.timeSaveSeconds = self.currentGame.timeElapsedSeconds;
         [self.btnTimeForward setTitle:@"▶︎" forState:UIControlStateNormal];
     } else {
         self.currentGame.timeRunning = @YES;
@@ -321,18 +336,18 @@
         if ([self.currentGame.timeCountUp boolValue]) {
             if ([self.currentGame.timeRunning boolValue] || self.periodChanged) {
                 NSTimeInterval timeDiff = [[NSDate date] timeIntervalSinceDate:self.currentGame.timeStartedAt];
-                self.currentGame.timeMinutes = @([self.currentGame.timeSaveMinutes intValue] + floor(timeDiff/60));
-                self.currentGame.timeSeconds = @([self.currentGame.timeSaveSeconds intValue] + round(timeDiff - floor(timeDiff / 60) * 60));
+                self.currentGame.timeElapsedMinutes = @([self.currentGame.timeSaveMinutes intValue] + floor(timeDiff/60));
+                self.currentGame.timeElapsedSeconds = @([self.currentGame.timeSaveSeconds intValue] + round(timeDiff - floor(timeDiff / 60) * 60));
                 self.periodChanged = NO;
             }
             
-            if ([self.currentGame.timeSeconds intValue] >= 60) {
-                self.currentGame.timeMinutes = @([self.currentGame.timeMinutes intValue] + 1);
-                self.currentGame.timeSeconds = @([self.currentGame.timeSeconds intValue] - 60);
+            if ([self.currentGame.timeElapsedSeconds intValue] >= 60) {
+                self.currentGame.timeElapsedMinutes = @([self.currentGame.timeElapsedMinutes intValue] + 1);
+                self.currentGame.timeElapsedSeconds = @([self.currentGame.timeElapsedSeconds intValue] - 60);
             }
         } else {
             if ([self.currentGame.timeRunning boolValue]) {
-                if (([self.currentGame.timeMinutes intValue] > 0) || ([self.currentGame.timeSeconds intValue] > 0)) {
+                if (([self.currentGame.timeElapsedMinutes intValue] > 0) || ([self.currentGame.timeElapsedSeconds intValue] > 0)) {
                     NSTimeInterval timeDiff = [[NSDate date] timeIntervalSinceDate:self.currentGame.timeStartedAt];
                     NSNumber *cumMinutes = @([self.currentGame.timeSaveMinutes intValue] + floor(timeDiff/60));
                     NSNumber *cumSeconds = @([self.currentGame.timeSaveSeconds intValue] + round(timeDiff - floor(timeDiff / 60) * 60));
@@ -342,19 +357,19 @@
                         cumSeconds = @([cumSeconds intValue] - 60);
                     }
                     
-                    self.currentGame.timeSeconds = @(60 - [cumSeconds intValue]);
-                    if ([self.currentGame.timeSeconds intValue] == 59) {
-                        self.currentGame.timeMinutes = @([self.currentGame.timeMinutes intValue] - 1);
-                    } else if ([self.currentGame.timeSeconds intValue] == 60) {
-                        self.currentGame.timeSeconds = @0;
+                    self.currentGame.timeElapsedSeconds = @(60 - [cumSeconds intValue]);
+                    if ([self.currentGame.timeElapsedSeconds intValue] == 59) {
+                        self.currentGame.timeElapsedMinutes = @([self.currentGame.timeElapsedMinutes intValue] - 1);
+                    } else if ([self.currentGame.timeElapsedSeconds intValue] == 60) {
+                        self.currentGame.timeElapsedSeconds = @0;
                     }
                 }
             }
         }
         
-        [self.labTime setText:[NSString stringWithFormat:@"%.2d:%.2d", [self.currentGame.timeMinutes intValue], [self.currentGame.timeSeconds intValue]]];
+        [self.labTime setText:[NSString stringWithFormat:@"%.2d:%.2d", [self.currentGame.timeElapsedMinutes intValue], [self.currentGame.timeElapsedSeconds intValue]]];
     } else {
-        [self.labTime setText:[NSString stringWithFormat:@"%@", self.currentGame.timeMinutes]];
+        [self.labTime setText:[NSString stringWithFormat:@"%@", self.currentGame.timeElapsedMinutes]];
     }
     [self saveState];
 }
@@ -368,22 +383,22 @@
 - (void)resetTime {
     if ([self.currentGame.timeCountUp boolValue]) {
         if ([self.currentGame.timeCountUpCum boolValue]) {
-            self.currentGame.timeMinutes = @0;
-            self.currentGame.timeSeconds = @0;
+            self.currentGame.timeElapsedMinutes = @0;
+            self.currentGame.timeElapsedSeconds = @0;
             self.currentGame.timeStartedAt = [NSDate date];
             self.currentGame.timeSaveMinutes = @([self.currentSport.periodTime intValue] * ([self.currentGame.period intValue] - 1));
             self.currentGame.timeSaveSeconds = @0;
             self.periodChanged = YES;
         } else {
-            self.currentGame.timeMinutes = @0;
-            self.currentGame.timeSeconds = @0;
+            self.currentGame.timeElapsedMinutes = @0;
+            self.currentGame.timeElapsedSeconds = @0;
             self.currentGame.timeStartedAt = [NSDate date];
             self.currentGame.timeSaveMinutes = @0;
             self.currentGame.timeSaveSeconds = @0;
         }
     } else {
-        self.currentGame.timeMinutes = self.currentSport.periodTime;
-        self.currentGame.timeSeconds = @0;
+        self.currentGame.timeElapsedMinutes = self.currentSport.periodTime;
+        self.currentGame.timeElapsedSeconds = @0;
         self.currentGame.timeStartedAt = [NSDate date];
         self.currentGame.timeSaveMinutes = @0;
         self.currentGame.timeSaveSeconds = @0;
@@ -394,8 +409,8 @@
     self.currentGame.period = period;
 //    if ([period boolValue]) {
 //        if ([self.currentGame.timeCountUp boolValue] && [self.currentGame.timeCountUpCum boolValue]) {
-//            self.currentGame.timeMinutes = @0;
-//            self.currentGame.timeSeconds = @0;
+//            self.currentGame.timeElapsedMinutes = @0;
+//            self.currentGame.timeElapsedSeconds = @0;
 //            self.currentGame.timeStartedAt = [NSDate date];
 //            self.currentGame.timeSaveMinutes = @([self.currentSport.periodTime intValue] * ([period intValue] - 1));
 //            self.currentGame.timeSaveSeconds = @0;
@@ -470,7 +485,7 @@
     if ([self.currentSport.periodTime intValue] > 0) {
         [self updatePlayPause];
     } else {
-        self.currentGame.timeMinutes = @([self.currentGame.timeMinutes intValue] + 1);
+        self.currentGame.timeElapsedMinutes = @([self.currentGame.timeElapsedMinutes intValue] + 1);
     }
     [self updateTime];
 }
@@ -479,8 +494,8 @@
     if ([self.currentSport.periodTime intValue] > 0) {
         [self resetTime];
     } else {
-        if ([self.currentGame.timeMinutes intValue] > 0) {
-            self.currentGame.timeMinutes = @([self.currentGame.timeMinutes intValue] - 1);
+        if ([self.currentGame.timeElapsedMinutes intValue] > 0) {
+            self.currentGame.timeElapsedMinutes = @([self.currentGame.timeElapsedMinutes intValue] - 1);
         }
     }
     [self updateTime];
@@ -523,5 +538,73 @@
         [self.undoManager undo];
     }
 }
+
+//#pragma mark - WatchKit
+//
+//- (NSDictionary *)prepareDataforWatch {
+//    NSMutableDictionary *watchData = [[NSMutableDictionary alloc] init];
+//    
+//    [watchData setObject:self.currentOptions.teamA forKey:@"teamA"];
+//    [watchData setObject:self.currentOptions.teamB forKey:@"teamB"];
+//    
+//    [watchData setObject:self.currentGame.sportName forKey:@"gameSport"];
+//    [watchData setObject:self.currentGame.period forKey:@"gamePeriod"];
+//    [watchData setObject:self.currentGame.scoreUs forKey:@"gameScoreUs"];
+//    [watchData setObject:self.currentGame.scoreThem forKey:@"gameScoreThem"];
+//    [watchData setObject:self.currentGame.timeCountUp forKey:@"gameTimeCountUp"];
+//    [watchData setObject:self.currentGame.timeCountUpCum forKey:@"gameTimeCountUpCum"];
+//    [watchData setObject:self.currentGame.timeElapsedMinutes forKey:@"gametimeElapsedMinutes"];
+//    [watchData setObject:self.currentGame.timeElapsedSeconds forKey:@"gametimeElapsedSeconds"];
+//    [watchData setObject:self.currentGame.timeRunning forKey:@"gameTimeRunning"];
+//    [watchData setObject:self.currentGame.timeStartedAt forKey:@"gameTimeStartedAt"];
+//    [watchData setObject:self.currentGame.timeSaveMinutes forKey:@"gameTimeSaveMinutes"];
+//    [watchData setObject:self.currentGame.timeSaveSeconds forKey:@"gameTimeSaveSeconds"];
+//    
+//    NSManagedObjectContext *context = [self managedObjectContext];
+//    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *sportsEntity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:context];
+//    [fetch setEntity:sportsEntity];
+//    NSError *error = nil;
+//    NSArray *fetchedObjects = [context executeFetchRequest:fetch error:&error];
+//    Sport *moSport;
+//    NSMutableArray *sportsList = [[NSMutableArray alloc] init];
+//    if ([fetchedObjects count] > 0) {
+//        for (moSport in fetchedObjects) {
+//            NSMutableDictionary *currentGame = [[NSMutableDictionary alloc] init];
+//            [currentGame setObject:moSport.name forKey:@"name"];
+//            [currentGame setObject:moSport.periodQuantity forKey:@"periodQuantity"];
+//            [currentGame setObject:moSport.periodTime forKey:@"periodTime"];
+//            [currentGame setObject:moSport.scoreTypeEname forKey:@"scoreTypeEname"];
+//            [currentGame setObject:moSport.scoreTypeEpoints forKey:@"scoreTypeEpoints"];
+//            [currentGame setObject:moSport.scoreTypeFname forKey:@"scoreTypeFname"];
+//            [currentGame setObject:moSport.scoreTypeFpoints forKey:@"scoreTypeFpoints"];
+//            [currentGame setObject:moSport.periodTimeUp forKey:@"periodTimeUp"];
+//            [currentGame setObject:moSport.periodTimeUpCum forKey:@"periodTimeUpCum"];
+//            [sportsList addObject:currentGame];
+//        }
+//    } else {
+//        NSLog(@"Error reading sports");
+//    }
+//    NSArray *sports = [sportsList copy];
+//    [watchData setObject:sports forKey:@"sports"];
+//    
+//    return watchData;
+//}
+//
+//- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
+//    NSLog(@"iPhone: didReceiveMessage");
+//    
+//    NSString *commandValue = [message objectForKey:@"command"];
+//    if ([commandValue isEqualToString:@"SendAppCoreData"]) {
+////        NSDictionary *appCoreData = [self prepareDataforWatch];
+////        replyHandler(appCoreData);
+//    }
+//    
+////    //Use this to update the UI instantaneously (otherwise, takes a little while)
+////    dispatch_async(dispatch_get_main_queue(), ^{
+////        [self.counterData addObject:counterValue];
+////        [self.mainTableView reloadData];
+////    });
+//}
 
 @end

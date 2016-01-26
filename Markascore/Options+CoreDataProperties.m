@@ -18,5 +18,6 @@
 @dynamic theme;
 @dynamic preventSleep;
 @dynamic enableUndo;
+@dynamic hasWatch;
 
 @end

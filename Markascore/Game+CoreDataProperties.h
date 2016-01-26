@@ -19,8 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *period;
 @property (nullable, nonatomic, retain) NSNumber *scoreUs;
 @property (nullable, nonatomic, retain) NSNumber *scoreThem;
-@property (nullable, nonatomic, retain) NSNumber *timeMinutes;
-@property (nullable, nonatomic, retain) NSNumber *timeSeconds;
+@property (nullable, nonatomic, retain) NSDate *timeElapsed;
+@property (nullable, nonatomic, retain) NSNumber *timeElapsedMinutes;
+@property (nullable, nonatomic, retain) NSNumber *timeElapsedSeconds;
 @property (nullable, nonatomic, retain) NSNumber *timeRunning;
 @property (nullable, nonatomic, retain) NSDate *timeStartedAt;
 @property (nullable, nonatomic, retain) NSNumber *timeSaveMinutes;

@@ -21,9 +21,13 @@
 @dynamic scoreTypeBname;
 @dynamic scoreTypeCname;
 @dynamic scoreTypeDname;
+@dynamic scoreTypeEname;
+@dynamic scoreTypeFname;
 @dynamic scoreTypeBpoints;
 @dynamic scoreTypeCpoints;
 @dynamic scoreTypeDpoints;
+@dynamic scoreTypeEpoints;
+@dynamic scoreTypeFpoints;
 @dynamic periodTimeUp;
 @dynamic periodTimeUpCum;
 

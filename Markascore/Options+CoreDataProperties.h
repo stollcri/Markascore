@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *theme;
 @property (nullable, nonatomic, retain) NSNumber *preventSleep;
 @property (nullable, nonatomic, retain) NSNumber *enableUndo;
+@property (nullable, nonatomic, retain) NSNumber *hasWatch;
 
 @end
 

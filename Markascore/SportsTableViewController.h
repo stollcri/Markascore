@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (strong, nonatomic) id currentSport;
+@property (strong, nonatomic) NSNumber *hasWatch;
 
 @end

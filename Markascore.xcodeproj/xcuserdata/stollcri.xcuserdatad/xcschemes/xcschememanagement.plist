@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Complication - MarkascoreWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Markascore.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>MarkascoreWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Notification - MarkascoreWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>7D49FC2A1C42036800B73A7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DF478F41C4DB9340047A9A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

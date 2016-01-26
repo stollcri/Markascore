@@ -23,9 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *scoreTypeBname;
 @property (nullable, nonatomic, retain) NSString *scoreTypeCname;
 @property (nullable, nonatomic, retain) NSString *scoreTypeDname;
+@property (nullable, nonatomic, retain) NSString *scoreTypeEname;
+@property (nullable, nonatomic, retain) NSString *scoreTypeFname;
 @property (nullable, nonatomic, retain) NSNumber *scoreTypeBpoints;
 @property (nullable, nonatomic, retain) NSNumber *scoreTypeCpoints;
 @property (nullable, nonatomic, retain) NSNumber *scoreTypeDpoints;
+@property (nullable, nonatomic, retain) NSNumber *scoreTypeEpoints;
+@property (nullable, nonatomic, retain) NSNumber *scoreTypeFpoints;
 @property (nullable, nonatomic, retain) NSNumber *periodTimeUp;
 @property (nullable, nonatomic, retain) NSNumber *periodTimeUpCum;
 

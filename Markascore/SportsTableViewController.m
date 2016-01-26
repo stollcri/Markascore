@@ -33,6 +33,25 @@
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
         
+        Sport *moAcademicChallenge = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+        moAcademicChallenge.name = @"🎓 Academic Challange 🎓";
+        moAcademicChallenge.periodQuantity = @1;
+        moAcademicChallenge.periodTime = @0;
+        moAcademicChallenge.scoreTypeAname = @"Point";
+        moAcademicChallenge.scoreTypeApoints = @10;
+        moAcademicChallenge.scoreTypeBname = @"Bonus";
+        moAcademicChallenge.scoreTypeBpoints = @5;
+        moAcademicChallenge.scoreTypeCname = @"";
+        moAcademicChallenge.scoreTypeCpoints = @0;
+        moAcademicChallenge.scoreTypeDname = @"";
+        moAcademicChallenge.scoreTypeDpoints = @0;
+        moAcademicChallenge.scoreTypeEname = @"Point";
+        moAcademicChallenge.scoreTypeEpoints = @10;
+        moAcademicChallenge.scoreTypeFname = @"Bonus";
+        moAcademicChallenge.scoreTypeFpoints = @5;
+        moAcademicChallenge.periodTimeUp = @NO;
+        moAcademicChallenge.periodTimeUpCum = @NO;
+        
         Sport *moSoccer = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         moSoccer.name = @"⚽️ Soccer ⚽️";
         moSoccer.periodQuantity = @2;
@@ -45,6 +64,10 @@
         moSoccer.scoreTypeCpoints = @0;
         moSoccer.scoreTypeDname = @"";
         moSoccer.scoreTypeDpoints = @0;
+        moSoccer.scoreTypeEname = @"Goal";
+        moSoccer.scoreTypeEpoints = @1;
+        moSoccer.scoreTypeFname = @"PK";
+        moSoccer.scoreTypeFpoints = @1;
         moSoccer.periodTimeUp = @YES;
         moSoccer.periodTimeUpCum = @YES;
         
@@ -60,6 +83,10 @@
         moFutsal.scoreTypeCpoints = @0;
         moFutsal.scoreTypeDname = @"";
         moFutsal.scoreTypeDpoints = @0;
+        moFutsal.scoreTypeEname = @"Goal";
+        moFutsal.scoreTypeEpoints = @1;
+        moFutsal.scoreTypeFname = @"PK";
+        moFutsal.scoreTypeFpoints = @1;
         moFutsal.periodTimeUp = @YES;
         moFutsal.periodTimeUpCum = @YES;
         
@@ -75,6 +102,10 @@
         moBaseball.scoreTypeCpoints = @0;
         moBaseball.scoreTypeDname = @"";
         moBaseball.scoreTypeDpoints = @0;
+        moBaseball.scoreTypeEname = @"Run";
+        moBaseball.scoreTypeEpoints = @1;
+        moBaseball.scoreTypeFname = @"";
+        moBaseball.scoreTypeFpoints = @0;
         moBaseball.periodTimeUp = @NO;
         moBaseball.periodTimeUpCum = @NO;
         
@@ -90,6 +121,10 @@
         moBasketball.scoreTypeCpoints = @1;
         moBasketball.scoreTypeDname = @"";
         moBasketball.scoreTypeDpoints = @0;
+        moBasketball.scoreTypeEname = @"2";
+        moBasketball.scoreTypeEpoints = @2;
+        moBasketball.scoreTypeFname = @"1";
+        moBasketball.scoreTypeFpoints = @1;
         moBasketball.periodTimeUp = @NO;
         moBasketball.periodTimeUpCum = @NO;
         
@@ -105,6 +140,10 @@
         moFootball.scoreTypeCpoints = @1;
         moFootball.scoreTypeDname = @"2PC";
         moFootball.scoreTypeDpoints = @2;
+        moFootball.scoreTypeEname = @"3";
+        moFootball.scoreTypeEpoints = @3;
+        moFootball.scoreTypeFname = @"1";
+        moFootball.scoreTypeFpoints = @1;
         moFootball.periodTimeUp = @NO;
         moFootball.periodTimeUpCum = @NO;
         
@@ -120,6 +159,10 @@
         moPingPong.scoreTypeCpoints = @0;
         moPingPong.scoreTypeDname = @"";
         moPingPong.scoreTypeDpoints = @0;
+        moPingPong.scoreTypeEname = @"Point";
+        moPingPong.scoreTypeEpoints = @1;
+        moPingPong.scoreTypeFname = @"";
+        moPingPong.scoreTypeFpoints = @0;
         moPingPong.periodTimeUp = @NO;
         moPingPong.periodTimeUpCum = @NO;
         
@@ -135,6 +178,10 @@
         moRugby.scoreTypeCpoints = @2;
         moRugby.scoreTypeDname = @"";
         moRugby.scoreTypeDpoints = @0;
+        moRugby.scoreTypeEname = @"3";
+        moRugby.scoreTypeEpoints = @3;
+        moRugby.scoreTypeFname = @"1";
+        moRugby.scoreTypeFpoints = @1;
         moRugby.periodTimeUp = @NO;
         moRugby.periodTimeUpCum = @NO;
         
@@ -150,6 +197,10 @@
         moVolleyball.scoreTypeCpoints = @0;
         moVolleyball.scoreTypeDname = @"";
         moVolleyball.scoreTypeDpoints = @0;
+        moVolleyball.scoreTypeEname = @"Point";
+        moVolleyball.scoreTypeEpoints = @1;
+        moVolleyball.scoreTypeFname = @"";
+        moVolleyball.scoreTypeFpoints = @0;
         moVolleyball.periodTimeUp = @NO;
         moVolleyball.periodTimeUpCum = @NO;
         
@@ -311,6 +362,7 @@
     
     if ([[segue identifier] isEqualToString:@"showSport"]){
         [[segue destinationViewController] setSportDetail:self.currentSport];
+        [[segue destinationViewController] setHasWatch:self.hasWatch];
     }
 }
 

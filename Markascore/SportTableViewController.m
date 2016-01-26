@@ -66,6 +66,14 @@
         
         [self.txtScoreDname setText:self.sportDetail.scoreTypeDname];
         [self.txtScoreDpoints setText:[self.sportDetail.scoreTypeDpoints stringValue]];
+        
+        if (self.hasWatch) {
+            [self.txtScoreEname setText:self.sportDetail.scoreTypeEname];
+            [self.txtScoreEpoints setText:[self.sportDetail.scoreTypeEpoints stringValue]];
+            
+            [self.txtScoreFname setText:self.sportDetail.scoreTypeFname];
+            [self.txtScoreFpoints setText:[self.sportDetail.scoreTypeFpoints stringValue]];
+        }
     }
 }
 
@@ -109,6 +117,12 @@
         
         self.sportDetail.scoreTypeDname = [self.txtScoreDname text];
         self.sportDetail.scoreTypeDpoints = [NSNumber numberWithInt:[[self.txtScoreDpoints text] intValue]];
+        
+        self.sportDetail.scoreTypeEname = [self.txtScoreEname text];
+        self.sportDetail.scoreTypeEpoints = [NSNumber numberWithInt:[[self.txtScoreEpoints text] intValue]];
+        
+        self.sportDetail.scoreTypeFname = [self.txtScoreFname text];
+        self.sportDetail.scoreTypeFpoints = [NSNumber numberWithInt:[[self.txtScoreFpoints text] intValue]];
         
         // Make sure there is one way to score (because no text, no button)
         if (![[self.txtScoreAname text] length] && ![[self.txtScoreBname text] length] && ![[self.txtScoreCname text] length] && ![[self.txtScoreDname text] length]) {

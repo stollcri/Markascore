@@ -16,6 +16,12 @@
 		7D49FC1A1C42036800B73A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49FC181C42036800B73A7C /* LaunchScreen.storyboard */; };
 		7D49FC251C42036800B73A7C /* MarkascoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC241C42036800B73A7C /* MarkascoreTests.m */; };
 		7D49FC301C42036800B73A7C /* MarkascoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC2F1C42036800B73A7C /* MarkascoreUITests.m */; };
+		7DBF7C111C557094008F3C46 /* ScoreboardLogoComplication16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0B1C557094008F3C46 /* ScoreboardLogoComplication16@2x.png */; };
+		7DBF7C121C557094008F3C46 /* ScoreboardLogoComplication18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0C1C557094008F3C46 /* ScoreboardLogoComplication18@2x.png */; };
+		7DBF7C131C557094008F3C46 /* ScoreboardLogoComplication20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0D1C557094008F3C46 /* ScoreboardLogoComplication20@2x.png */; };
+		7DBF7C141C557094008F3C46 /* ScoreboardLogoComplication22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0E1C557094008F3C46 /* ScoreboardLogoComplication22@2x.png */; };
+		7DBF7C151C557094008F3C46 /* ScoreboardLogoComplication26@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0F1C557094008F3C46 /* ScoreboardLogoComplication26@2x.png */; };
+		7DBF7C161C557094008F3C46 /* ScoreboardLogoComplication29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C101C557094008F3C46 /* ScoreboardLogoComplication29@2x.png */; };
 		7DF4789A1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
 		7DF4789B1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
 		7DF4789C1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
@@ -61,6 +67,34 @@
 		7DF478EF1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */; };
 		7DF478F11C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */; };
 		7DF478F21C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */; };
+		7DF478F91C4DB9340047A9A9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F71C4DB9340047A9A9 /* Interface.storyboard */; };
+		7DF478FB1C4DB9340047A9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478FA1C4DB9340047A9A9 /* Assets.xcassets */; };
+		7DF479021C4DB9340047A9A9 /* MarkascoreWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7DF479011C4DB9340047A9A9 /* MarkascoreWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7DF4790A1C4DB9340047A9A9 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF479091C4DB9340047A9A9 /* InterfaceController.m */; };
+		7DF4790D1C4DB9340047A9A9 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4790C1C4DB9340047A9A9 /* ExtensionDelegate.m */; };
+		7DF479101C4DB9340047A9A9 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4790F1C4DB9340047A9A9 /* NotificationController.m */; };
+		7DF479131C4DB9340047A9A9 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF479121C4DB9340047A9A9 /* ComplicationController.m */; };
+		7DF479151C4DB9340047A9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479141C4DB9340047A9A9 /* Assets.xcassets */; };
+		7DF479191C4DB9340047A9A9 /* MarkascoreWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7DF478F51C4DB9340047A9A9 /* MarkascoreWatch.app */; };
+		7DF479281C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */; };
+		7DF479291C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */; };
+		7DF4792A1C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */; };
+		7DF4792B1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */; };
+		7DF4792C1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */; };
+		7DF4792D1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */; };
+		7DF4792E1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */; };
+		7DF4792F1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */; };
+		7DF479301C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */; };
+		7DF479311C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */; };
+		7DF479321C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */; };
+		7DF479331C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */; };
+		7DF479341C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */; };
+		7DF479351C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */; };
+		7DF479361C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */; };
+		7DF479371C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
+		7DF479381C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
+		7DF479391C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
+		7DFC8B8F1C507323007B6B45 /* SportsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC8B8E1C507323007B6B45 /* SportsInterfaceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +112,46 @@
 			remoteGlobalIDString = 7D49FC031C42036700B73A7C;
 			remoteInfo = Markascore;
 		};
+		7DF479031C4DB9340047A9A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D49FBFC1C42036700B73A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DF479001C4DB9340047A9A9;
+			remoteInfo = "MarkascoreWatch Extension";
+		};
+		7DF479171C4DB9340047A9A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D49FBFC1C42036700B73A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DF478F41C4DB9340047A9A9;
+			remoteInfo = MarkascoreWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DF4791D1C4DB9340047A9A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7DF479021C4DB9340047A9A9 /* MarkascoreWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DF479211C4DB9340047A9A9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7DF479191C4DB9340047A9A9 /* MarkascoreWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D49FC041C42036700B73A7C /* Markascore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Markascore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +171,12 @@
 		7D49FC2B1C42036800B73A7C /* MarkascoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkascoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49FC2F1C42036800B73A7C /* MarkascoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkascoreUITests.m; sourceTree = "<group>"; };
 		7D49FC311C42036800B73A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DBF7C0B1C557094008F3C46 /* ScoreboardLogoComplication16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication16@2x.png"; sourceTree = "<group>"; };
+		7DBF7C0C1C557094008F3C46 /* ScoreboardLogoComplication18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication18@2x.png"; sourceTree = "<group>"; };
+		7DBF7C0D1C557094008F3C46 /* ScoreboardLogoComplication20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication20@2x.png"; sourceTree = "<group>"; };
+		7DBF7C0E1C557094008F3C46 /* ScoreboardLogoComplication22@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication22@2x.png"; sourceTree = "<group>"; };
+		7DBF7C0F1C557094008F3C46 /* ScoreboardLogoComplication26@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication26@2x.png"; sourceTree = "<group>"; };
+		7DBF7C101C557094008F3C46 /* ScoreboardLogoComplication29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication29@2x.png"; sourceTree = "<group>"; };
 		7DF478981C42F2CA0047A9A9 /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
 		7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
 		7DF478AB1C42F5400047A9A9 /* Sport+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sport+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -128,6 +207,30 @@
 		7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@2x.png"; sourceTree = "<group>"; };
 		7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@3x.png"; sourceTree = "<group>"; };
 		7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-83_5@2x.png"; sourceTree = "<group>"; };
+		7DF478F51C4DB9340047A9A9 /* MarkascoreWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkascoreWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF478F81C4DB9340047A9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7DF478FA1C4DB9340047A9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DF478FC1C4DB9340047A9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF479011C4DB9340047A9A9 /* MarkascoreWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MarkascoreWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF479071C4DB9340047A9A9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		7DF479081C4DB9340047A9A9 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		7DF479091C4DB9340047A9A9 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		7DF4790B1C4DB9340047A9A9 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		7DF4790C1C4DB9340047A9A9 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		7DF4790E1C4DB9340047A9A9 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		7DF4790F1C4DB9340047A9A9 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		7DF479111C4DB9340047A9A9 /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		7DF479121C4DB9340047A9A9 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		7DF479141C4DB9340047A9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DF479161C4DB9340047A9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-38-Notification.png"; sourceTree = "<group>"; };
+		7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-38-Short-Look.png"; sourceTree = "<group>"; };
+		7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Long-Look.png"; sourceTree = "<group>"; };
+		7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Notification.png"; sourceTree = "<group>"; };
+		7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Short-Look.png"; sourceTree = "<group>"; };
+		7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-HomeScreen-38-Long-Look.png"; sourceTree = "<group>"; };
+		7DFC8B8D1C507323007B6B45 /* SportsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsInterfaceController.h; sourceTree = "<group>"; };
+		7DFC8B8E1C507323007B6B45 /* SportsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsInterfaceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +255,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DF478FE1C4DB9340047A9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -162,6 +272,8 @@
 				7D49FC061C42036700B73A7C /* Markascore */,
 				7D49FC231C42036800B73A7C /* MarkascoreTests */,
 				7D49FC2E1C42036800B73A7C /* MarkascoreUITests */,
+				7DF478F61C4DB9340047A9A9 /* MarkascoreWatch */,
+				7DF479051C4DB9340047A9A9 /* MarkascoreWatch Extension */,
 				7D49FC051C42036700B73A7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +284,8 @@
 				7D49FC041C42036700B73A7C /* Markascore.app */,
 				7D49FC201C42036800B73A7C /* MarkascoreTests.xctest */,
 				7D49FC2B1C42036800B73A7C /* MarkascoreUITests.xctest */,
+				7DF478F51C4DB9340047A9A9 /* MarkascoreWatch.app */,
+				7DF479011C4DB9340047A9A9 /* MarkascoreWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +363,12 @@
 		7DF478D11C4C93AC0047A9A9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */,
+				7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */,
+				7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */,
+				7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */,
+				7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */,
+				7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */,
 				7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */,
 				7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */,
 				7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */,
@@ -260,8 +380,52 @@
 				7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */,
 				7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */,
 				7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */,
+				7DBF7C0B1C557094008F3C46 /* ScoreboardLogoComplication16@2x.png */,
+				7DBF7C0C1C557094008F3C46 /* ScoreboardLogoComplication18@2x.png */,
+				7DBF7C0D1C557094008F3C46 /* ScoreboardLogoComplication20@2x.png */,
+				7DBF7C0E1C557094008F3C46 /* ScoreboardLogoComplication22@2x.png */,
+				7DBF7C0F1C557094008F3C46 /* ScoreboardLogoComplication26@2x.png */,
+				7DBF7C101C557094008F3C46 /* ScoreboardLogoComplication29@2x.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		7DF478F61C4DB9340047A9A9 /* MarkascoreWatch */ = {
+			isa = PBXGroup;
+			children = (
+				7DF478F71C4DB9340047A9A9 /* Interface.storyboard */,
+				7DF478FA1C4DB9340047A9A9 /* Assets.xcassets */,
+				7DF478FC1C4DB9340047A9A9 /* Info.plist */,
+			);
+			path = MarkascoreWatch;
+			sourceTree = "<group>";
+		};
+		7DF479051C4DB9340047A9A9 /* MarkascoreWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7DF479081C4DB9340047A9A9 /* InterfaceController.h */,
+				7DF479091C4DB9340047A9A9 /* InterfaceController.m */,
+				7DFC8B8D1C507323007B6B45 /* SportsInterfaceController.h */,
+				7DFC8B8E1C507323007B6B45 /* SportsInterfaceController.m */,
+				7DF4790B1C4DB9340047A9A9 /* ExtensionDelegate.h */,
+				7DF4790C1C4DB9340047A9A9 /* ExtensionDelegate.m */,
+				7DF4790E1C4DB9340047A9A9 /* NotificationController.h */,
+				7DF4790F1C4DB9340047A9A9 /* NotificationController.m */,
+				7DF479111C4DB9340047A9A9 /* ComplicationController.h */,
+				7DF479121C4DB9340047A9A9 /* ComplicationController.m */,
+				7DF479141C4DB9340047A9A9 /* Assets.xcassets */,
+				7DF479161C4DB9340047A9A9 /* Info.plist */,
+				7DF479061C4DB9340047A9A9 /* Supporting Files */,
+			);
+			path = "MarkascoreWatch Extension";
+			sourceTree = "<group>";
+		};
+		7DF479061C4DB9340047A9A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DF479071C4DB9340047A9A9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +438,12 @@
 				7D49FC001C42036700B73A7C /* Sources */,
 				7D49FC011C42036700B73A7C /* Frameworks */,
 				7D49FC021C42036700B73A7C /* Resources */,
+				7DF479211C4DB9340047A9A9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7DF479181C4DB9340047A9A9 /* PBXTargetDependency */,
 			);
 			name = Markascore;
 			productName = Markascore;
@@ -320,6 +486,40 @@
 			productReference = 7D49FC2B1C42036800B73A7C /* MarkascoreUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		7DF478F41C4DB9340047A9A9 /* MarkascoreWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DF4791E1C4DB9340047A9A9 /* Build configuration list for PBXNativeTarget "MarkascoreWatch" */;
+			buildPhases = (
+				7DF478F31C4DB9340047A9A9 /* Resources */,
+				7DF4791D1C4DB9340047A9A9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DF479041C4DB9340047A9A9 /* PBXTargetDependency */,
+			);
+			name = MarkascoreWatch;
+			productName = MarkascoreWatch;
+			productReference = 7DF478F51C4DB9340047A9A9 /* MarkascoreWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		7DF479001C4DB9340047A9A9 /* MarkascoreWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DF4791A1C4DB9340047A9A9 /* Build configuration list for PBXNativeTarget "MarkascoreWatch Extension" */;
+			buildPhases = (
+				7DF478FD1C4DB9340047A9A9 /* Sources */,
+				7DF478FE1C4DB9340047A9A9 /* Frameworks */,
+				7DF478FF1C4DB9340047A9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MarkascoreWatch Extension";
+			productName = "MarkascoreWatch Extension";
+			productReference = 7DF479011C4DB9340047A9A9 /* MarkascoreWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -341,6 +541,14 @@
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = 7D49FC031C42036700B73A7C;
 					};
+					7DF478F41C4DB9340047A9A9 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SKWNJR3SRG;
+					};
+					7DF479001C4DB9340047A9A9 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SKWNJR3SRG;
+					};
 				};
 			};
 			buildConfigurationList = 7D49FBFF1C42036700B73A7C /* Build configuration list for PBXProject "Markascore" */;
@@ -359,6 +567,8 @@
 				7D49FC031C42036700B73A7C /* Markascore */,
 				7D49FC1F1C42036800B73A7C /* MarkascoreTests */,
 				7D49FC2A1C42036800B73A7C /* MarkascoreUITests */,
+				7DF478F41C4DB9340047A9A9 /* MarkascoreWatch */,
+				7DF479001C4DB9340047A9A9 /* MarkascoreWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -369,18 +579,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DF478EA1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */,
+				7DF479311C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */,
 				7D49FC1A1C42036800B73A7C /* LaunchScreen.storyboard in Resources */,
 				7DF478E01C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */,
 				7DF478EC1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */,
 				7DF478E41C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */,
 				7DF478E61C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */,
+				7DF479371C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
 				7DF478E21C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */,
 				7DF478DC1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */,
 				7DF478F11C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */,
+				7DF479341C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */,
 				7DF478EE1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */,
 				7DF478E81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */,
 				7D49FC171C42036800B73A7C /* Assets.xcassets in Resources */,
+				7DF479281C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */,
+				7DF4792E1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */,
 				7DF478DE1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */,
+				7DF4792B1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */,
 				7D49FC121C42036800B73A7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,13 +616,48 @@
 				7DF478E31C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */,
 				7DF478DF1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */,
 				7DF478E11C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */,
+				7DF479351C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */,
+				7DF4792C1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */,
 				7DF478ED1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */,
+				7DF479381C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
 				7DF478E71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */,
+				7DF479321C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */,
+				7DF479291C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */,
 				7DF478F21C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */,
 				7DF478E51C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */,
 				7DF478DD1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */,
+				7DF4792F1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */,
 				7DF478EB1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */,
 				7DF478E91C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DF478F31C4DB9340047A9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF479301C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */,
+				7DF479331C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */,
+				7DF479361C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */,
+				7DF4792A1C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */,
+				7DF478FB1C4DB9340047A9A9 /* Assets.xcassets in Resources */,
+				7DF4792D1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */,
+				7DF478F91C4DB9340047A9A9 /* Interface.storyboard in Resources */,
+				7DF479391C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DF478FF1C4DB9340047A9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DBF7C141C557094008F3C46 /* ScoreboardLogoComplication22@2x.png in Resources */,
+				7DBF7C111C557094008F3C46 /* ScoreboardLogoComplication16@2x.png in Resources */,
+				7DBF7C131C557094008F3C46 /* ScoreboardLogoComplication20@2x.png in Resources */,
+				7DF479151C4DB9340047A9A9 /* Assets.xcassets in Resources */,
+				7DBF7C161C557094008F3C46 /* ScoreboardLogoComplication29@2x.png in Resources */,
+				7DBF7C121C557094008F3C46 /* ScoreboardLogoComplication18@2x.png in Resources */,
+				7DBF7C151C557094008F3C46 /* ScoreboardLogoComplication26@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +714,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DF478FD1C4DB9340047A9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF4790D1C4DB9340047A9A9 /* ExtensionDelegate.m in Sources */,
+				7DFC8B8F1C507323007B6B45 /* SportsInterfaceController.m in Sources */,
+				7DF479131C4DB9340047A9A9 /* ComplicationController.m in Sources */,
+				7DF4790A1C4DB9340047A9A9 /* InterfaceController.m in Sources */,
+				7DF479101C4DB9340047A9A9 /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -475,6 +738,16 @@
 			isa = PBXTargetDependency;
 			target = 7D49FC031C42036700B73A7C /* Markascore */;
 			targetProxy = 7D49FC2C1C42036800B73A7C /* PBXContainerItemProxy */;
+		};
+		7DF479041C4DB9340047A9A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DF479001C4DB9340047A9A9 /* MarkascoreWatch Extension */;
+			targetProxy = 7DF479031C4DB9340047A9A9 /* PBXContainerItemProxy */;
+		};
+		7DF479181C4DB9340047A9A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DF478F41C4DB9340047A9A9 /* MarkascoreWatch */;
+			targetProxy = 7DF479171C4DB9340047A9A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -493,6 +766,14 @@
 				7D49FC191C42036800B73A7C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7DF478F71C4DB9340047A9A9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DF478F81C4DB9340047A9A9 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -534,7 +815,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -572,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,6 +867,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Markascore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -598,6 +880,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Markascore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -652,6 +935,70 @@
 			};
 			name = Release;
 		};
+		7DF4791B1C4DB9340047A9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "MarkascoreWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		7DF4791C1C4DB9340047A9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "MarkascoreWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		7DF4791F1C4DB9340047A9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = MarkascoreWatch_Extension;
+				INFOPLIST_FILE = MarkascoreWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		7DF479201C4DB9340047A9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = MarkascoreWatch_Extension;
+				INFOPLIST_FILE = MarkascoreWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.christopherstoll.Markascore.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -687,6 +1034,24 @@
 			buildConfigurations = (
 				7D49FC3B1C42036800B73A7C /* Debug */,
 				7D49FC3C1C42036800B73A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DF4791A1C4DB9340047A9A9 /* Build configuration list for PBXNativeTarget "MarkascoreWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DF4791B1C4DB9340047A9A9 /* Debug */,
+				7DF4791C1C4DB9340047A9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DF4791E1C4DB9340047A9A9 /* Build configuration list for PBXNativeTarget "MarkascoreWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DF4791F1C4DB9340047A9A9 /* Debug */,
+				7DF479201C4DB9340047A9A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
