@@ -8,6 +8,10 @@
 
 #import "InterfaceController.h"
 
+#define TIMER_UPDATE_MODE_INIT 1
+#define TIMER_UPDATE_MODE_START 2
+#define TIMER_UPDATE_MODE_STOP 3
+#define TIMER_UPDATE_MODE_RESET 4
 
 @interface InterfaceController()
 
@@ -20,24 +24,27 @@
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+    
+    // sett up communication session
+    // (should always be supported on the watch)
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+    
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    // check for UI sanity
+    [self validateUI];
+    // and update the UI now
+    [self updateUI];
+    // in case we don't hear back
+    [self requestDefaults];
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-    
-    if ([WCSession isSupported]) {
-        self.session = [WCSession defaultSession];
-        self.session.delegate = self;
-        [self.session activateSession];
-    } else {
-        // this should never ever happen
-        NSLog(@"Something bad happened. WCSession is NOT supported, on the Watch");
-    }
-    
-    self.userDefaults = [NSUserDefaults standardUserDefaults];
-    [self checkAppValues];
-    [self requestDefaults];
 }
 
 - (void)didDeactivate {
@@ -52,11 +59,8 @@
     if ([[WCSession defaultSession] isReachable]) {
         NSDictionary *appMessage = [[NSDictionary alloc] initWithObjectsAndKeys:@"SendAppCoreData", @"command", nil];
         //NSLog(@"Sending message...");
-        [self.session sendMessage:appMessage
+        [[WCSession defaultSession] sendMessage:appMessage
                                    replyHandler:^(NSDictionary *reply) {
-                                       //handle reply from iPhone app here
-                                       //NSLog(@"Watch: did receive message -- %@ / %@", [reply objectForKey:@"teamA"], [reply objectForKey:@"teamB"]);
-                                       
                                        [self.userDefaults setObject:[reply objectForKey:@"teamA"] forKey:@"teamA"];
                                        [self.userDefaults setObject:[reply objectForKey:@"teamB"] forKey:@"teamB"];
                                        
@@ -78,6 +82,12 @@
                                        [self.userDefaults setObject:[reply objectForKey:@"gameTimeSaveSeconds"] forKey:@"gameTimeSaveSeconds"];
                                         */
                                        
+                                       BOOL sportChanged = NO;
+                                       // check if the sport will change, so we can do resets below
+                                       if (![[reply objectForKey:@"currentSportName"] isEqualToString:[self.userDefaults objectForKey:@"currentSportName"]]) {
+                                           sportChanged = YES;
+                                       }
+                                       
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportName"] forKey:@"currentSportName"];
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportPeriodQuantity"] forKey:@"currentSportPeriodQuantity"];
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportPeriodTime"] forKey:@"currentSportPeriodTime"];
@@ -90,8 +100,16 @@
                                        
                                        //[self.userDefaults setObject:[reply objectForKey:@"sports"] forKey:@"sports"];
                                        
-                                       [self checkAppValues];
-                                       [self.userDefaults synchronize];
+                                       // reset certain values when the sport changes
+                                       if (sportChanged) {
+                                           [self.userDefaults setObject:@0 forKey:@"gameTimeElapsed"];
+                                           [self updateTimerStatus:TIMER_UPDATE_MODE_RESET];
+                                           
+                                           [self.userDefaults setObject:@0 forKey:@"gameScoreUs"];
+                                           [self.userDefaults setObject:@0 forKey:@"gameScoreThem"];
+                                       }
+                                       [self validateUI];
+                                       [self updateUI];
                                    }
                                    errorHandler:^(NSError *error) {
                                        //catch any errors here
@@ -105,7 +123,7 @@
 
 #pragma mark - UI methods
 
-- (void)checkAppValues {
+- (void)validateUI {
     //
     // if values are (null), then this is probably the first run, so set them to defaults
     //
@@ -140,9 +158,12 @@
         if ([[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"] boolValue]) {
             [self.btnUsScoreB setHidden:NO];
             [self.btnThemScoreB setHidden:NO];
+        } else {
+            [self.btnUsScoreB setHidden:YES];
+            [self.btnThemScoreB setHidden:YES];
         }
     }
-    [self updateUI];
+    [self updateTimerStatus:TIMER_UPDATE_MODE_INIT];
 }
 
 - (void)updateUI {
@@ -155,12 +176,13 @@
         [self.btnUsScoreA setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
         [self.btnThemScoreA setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
     }
-    if ([self.userDefaults objectForKey:@"currentSportScoreTypeFname"] != nil) {
+    if ([self.userDefaults objectForKey:@"currentSportScoreTypeFname"] != nil && ![[self.userDefaults objectForKey:@"currentSportScoreTypeFname"] isEqualToString:@""]) {
         [self.btnUsScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
         [self.btnThemScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
         [self.btnUsScoreB setHidden:NO];
         [self.btnThemScoreB setHidden:NO];
     } else {
+        NSLog(@"hide, hide");
         [self.btnUsScoreB setHidden:YES];
         [self.btnThemScoreB setHidden:YES];
     }
@@ -178,69 +200,67 @@
     [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
 }
 
-- (void)updateTimerStatus:(NSNumber*)mode {
-    // reset
-    if ([mode intValue] == 2) {
-        int gameTimeInSecs = [[self.userDefaults objectForKey:@"currentSportPeriodTime"] intValue] * 60;
+- (void)updateTimerStatus:(int)mode {
+    int gameTimeInSecs = ([[self.userDefaults objectForKey:@"currentSportPeriodTime"] intValue] * 60) + 1;
+    int elapsedTime = [[self.userDefaults objectForKey:@"gameTimeElapsed"] intValue];
+    BOOL countUp = [[self.userDefaults objectForKey:@"gameTimeCountUp"] boolValue];
+    NSDate *timeStarted = [self.userDefaults objectForKey:@"gameTimeStartedAt"];
+    NSTimeInterval timeLeft;
+    NSDate *timeEnded;
+    
+    // init display
+    if (mode == TIMER_UPDATE_MODE_INIT) {
+        if (countUp) {
+            timeLeft = elapsedTime;
+        } else {
+            timeLeft = gameTimeInSecs - elapsedTime;
+        }
+        timeEnded = [NSDate dateWithTimeIntervalSinceNow:timeLeft];
+        [self.tmrMain setDate:timeEnded];
         
-        NSTimeInterval timeLeft;
-        if ([[self.userDefaults objectForKey:@"gameTimeCountUp"] boolValue]) {
+    // reset
+    } else if (mode == TIMER_UPDATE_MODE_RESET) {
+        if (countUp) {
             timeLeft = 0;
         } else {
             timeLeft = gameTimeInSecs;
         }
-        NSDate *timeEnd = [NSDate dateWithTimeIntervalSinceNow:timeLeft];
+        timeEnded = [NSDate dateWithTimeIntervalSinceNow:timeLeft];
+        [self.tmrMain setDate:timeEnded];
         
+        [self.userDefaults setObject:[NSDate date] forKey:@"gameTimeStartedAt"];
         [self.userDefaults setObject:@0 forKey:@"gameTimeElapsed"];
-        [self.tmrMain setDate:timeEnd];
-        [self.tmrMain stop];
-        [self.tmrMain start];
-        
-        if ([self.timerRunning boolValue]) {
-            [self.tmrMain start];
-            self.timerRunning = @1;
-        } else {
-            [self.tmrMain stop];
-            self.timerRunning = @0;
-        }
         
     // stop
-    } else if ([mode intValue] == 1) {
-        if ([self.timerRunning boolValue]) {
-            NSDate *timeStarted = [self.userDefaults objectForKey:@"gameTimeStartedAt"];
-            NSDate *timePaused = [NSDate date];
-            int lastElapsedTime = [[self.userDefaults objectForKey:@"gameTimeElapsed"] intValue];
-            
-            NSTimeInterval elapsedTime = lastElapsedTime + [timeStarted timeIntervalSinceDate:timePaused];
+    } else if (mode == TIMER_UPDATE_MODE_STOP) {
+        // only stop if started
+        if (self.timerRunning) {
+            elapsedTime += [[NSDate date] timeIntervalSinceDate:timeStarted];
+            [self.tmrMain stop];
             
             [self.userDefaults setObject:@(elapsedTime) forKey:@"gameTimeElapsed"];
-            [self.tmrMain stop];
-            self.timerRunning = @0;
+            self.timerRunning = NO;
         }
         
     // start
-    } else {
-        if (![self.timerRunning boolValue]) {
-            int gameTimeInSecs = [[self.userDefaults objectForKey:@"currentSportPeriodTime"] intValue] * 60;
-            int elapsedTime = [[self.userDefaults objectForKey:@"gameTimeElapsed"] intValue];
-            
-            NSTimeInterval timeLeft;
-            if ([[self.userDefaults objectForKey:@"gameTimeCountUp"] boolValue]) {
-                timeLeft = elapsedTime - gameTimeInSecs;
+    } else if (mode == TIMER_UPDATE_MODE_START) {
+        // only start if stopped
+        if (!self.timerRunning) {
+            if (countUp) {
+                timeLeft = elapsedTime;
             } else {
                 timeLeft = gameTimeInSecs - elapsedTime;
             }
-            NSLog(@"%f", timeLeft);
-            NSDate *timeEnd = [NSDate dateWithTimeIntervalSinceNow:timeLeft];
+            timeEnded = [NSDate dateWithTimeIntervalSinceNow:timeLeft];
+            [self.tmrMain setDate:timeEnded];
+            [self.tmrMain start];
             
             [self.userDefaults setObject:[NSDate date] forKey:@"gameTimeStartedAt"];
-            [self.tmrMain setDate:timeEnd];
-            [self.tmrMain start];
-            self.timerRunning = @1;
+            self.timerRunning = YES;
         }
     }
     
-    if ([self.timerRunning boolValue]) {
+    if (self.timerRunning) {
         [self.userDefaults setObject:@YES forKey:@"gameTimeRunning"];
     } else {
         [self.userDefaults setObject:@NO forKey:@"gameTimeRunning"];
@@ -266,15 +286,15 @@
 }
 
 - (IBAction)tchPlay {
-    [self updateTimerStatus:@0];
+    [self updateTimerStatus:TIMER_UPDATE_MODE_START];
 }
 
 - (IBAction)tchPause {
-    [self updateTimerStatus:@1];
+    [self updateTimerStatus:TIMER_UPDATE_MODE_STOP];
 }
 
 - (IBAction)tchRestart {
-    [self updateTimerStatus:@2];
+    [self updateTimerStatus:TIMER_UPDATE_MODE_RESET];
 }
 
 - (IBAction)tchReset {

@@ -12,9 +12,8 @@
 
 @interface InterfaceController : WKInterfaceController <WCSessionDelegate>
 
-@property (strong, nonatomic) WCSession *session;
 @property (strong, nonatomic) NSUserDefaults *userDefaults;
-@property (strong, nonatomic) NSNumber *timerRunning;
+@property (nonatomic) BOOL timerRunning;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTimer *tmrMain;
 
