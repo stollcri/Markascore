@@ -208,6 +208,8 @@
             [currentSport setObject:moSport.scoreTypeEpoints forKey:@"scoreTypeEpoints"];
             [currentSport setObject:moSport.scoreTypeFname forKey:@"scoreTypeFname"];
             [currentSport setObject:moSport.scoreTypeFpoints forKey:@"scoreTypeFpoints"];
+            [currentSport setObject:moSport.scoreTypeGname forKey:@"scoreTypeGname"];
+            [currentSport setObject:moSport.scoreTypeGpoints forKey:@"scoreTypeGpoints"];
             [currentSport setObject:moSport.periodTimeUp forKey:@"periodTimeUp"];
             [currentSport setObject:moSport.periodTimeUpCum forKey:@"periodTimeUpCum"];
             [sportsList addObject:currentSport];
@@ -222,6 +224,8 @@
                 [watchData setObject:moSport.scoreTypeEpoints forKey:@"currentSportScoreTypeEpoints"];
                 [watchData setObject:moSport.scoreTypeFname forKey:@"currentSportScoreTypeFname"];
                 [watchData setObject:moSport.scoreTypeFpoints forKey:@"currentSportScoreTypeFpoints"];
+                [watchData setObject:moSport.scoreTypeGname forKey:@"currentSportScoreTypeGname"];
+                [watchData setObject:moSport.scoreTypeGpoints forKey:@"currentSportScoreTypeGpoints"];
                 [watchData setObject:moSport.periodTimeUp forKey:@"currentSportPeriodTimeUp"];
                 [watchData setObject:moSport.periodTimeUpCum forKey:@"currentSportPeriodTimeUpCum"];
             }

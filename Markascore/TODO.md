@@ -1,7 +1,5 @@
 # MVP
 
-- some value needs to be reset between start and stop
-- gameTimeElapsed on the watch needs reset when the sport changes
 - Complication should show current score (must work with iOS app?)
 - When returning to the app after a long time, if the timer was running, reset the timer or do not update the time
 

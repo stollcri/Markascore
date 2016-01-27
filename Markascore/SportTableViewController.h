@@ -39,6 +39,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtScoreFname;
 @property (weak, nonatomic) IBOutlet UITextField *txtScoreFpoints;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtScoreGname;
+@property (weak, nonatomic) IBOutlet UITextField *txtScoreGpoints;
+
 - (IBAction)countUpEnable:(id)sender;
 
 @end

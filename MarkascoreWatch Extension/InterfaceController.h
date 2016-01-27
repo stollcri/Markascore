@@ -24,15 +24,29 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *labThemScore;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreA;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreB;
-
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreA;
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreB;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreB;
 
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreC;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreD;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreC;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreD;
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp2;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp3;
+
 - (IBAction)tchUsScoreA;
-- (IBAction)tchUsScoreB;
 - (IBAction)tchThemScoreA;
+
+- (IBAction)tchUsScoreB;
 - (IBAction)tchThemScoreB;
+
+- (IBAction)tchUsScoreC;
+- (IBAction)tchUsScoreD;
+- (IBAction)tchThemScoreC;
+- (IBAction)tchThemScoreD;
 
 - (IBAction)tchPlay;
 - (IBAction)tchPause;

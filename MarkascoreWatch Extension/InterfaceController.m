@@ -95,6 +95,8 @@
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportScoreTypeEpoints"] forKey:@"currentSportScoreTypeEpoints"];
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportScoreTypeFname"] forKey:@"currentSportScoreTypeFname"];
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportScoreTypeFpoints"] forKey:@"currentSportScoreTypeFpoints"];
+                                       [self.userDefaults setObject:[reply objectForKey:@"currentSportScoreTypeGname"] forKey:@"currentSportScoreTypeGname"];
+                                       [self.userDefaults setObject:[reply objectForKey:@"currentSportScoreTypeGpoints"] forKey:@"currentSportScoreTypeGpoints"];
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportPeriodTimeUp"] forKey:@"currentSportPeriodTimeUp"];
                                        [self.userDefaults setObject:[reply objectForKey:@"currentSportPeriodTimeUpCum"] forKey:@"currentSportPeriodTimeUpCum"];
                                        
@@ -156,11 +158,31 @@
         }
         // if there is a secondary scoring value, then show the secondary scoring buttons
         if ([[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"] boolValue]) {
-            [self.btnUsScoreB setHidden:NO];
-            [self.btnThemScoreB setHidden:NO];
+            if ([[self.userDefaults objectForKey:@"currentSportScoreTypeGpoints"] boolValue]) {
+                [self.btnUsScoreB setHidden:YES];
+                [self.btnThemScoreB setHidden:YES];
+                
+                [self.btnUsScoreC setHidden:NO];
+                [self.btnUsScoreD setHidden:NO];
+                [self.btnThemScoreC setHidden:NO];
+                [self.btnThemScoreD setHidden:NO];
+            } else {
+                [self.btnUsScoreB setHidden:NO];
+                [self.btnThemScoreB setHidden:NO];
+                
+                [self.btnUsScoreC setHidden:YES];
+                [self.btnUsScoreD setHidden:YES];
+                [self.btnThemScoreC setHidden:YES];
+                [self.btnThemScoreD setHidden:YES];
+            }
         } else {
             [self.btnUsScoreB setHidden:YES];
             [self.btnThemScoreB setHidden:YES];
+            
+            [self.btnUsScoreC setHidden:YES];
+            [self.btnUsScoreD setHidden:YES];
+            [self.btnThemScoreC setHidden:YES];
+            [self.btnThemScoreD setHidden:YES];
         }
     }
     [self updateTimerStatus:TIMER_UPDATE_MODE_INIT];
@@ -177,14 +199,45 @@
         [self.btnThemScoreA setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
     }
     if ([self.userDefaults objectForKey:@"currentSportScoreTypeFname"] != nil && ![[self.userDefaults objectForKey:@"currentSportScoreTypeFname"] isEqualToString:@""]) {
-        [self.btnUsScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
-        [self.btnThemScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
-        [self.btnUsScoreB setHidden:NO];
-        [self.btnThemScoreB setHidden:NO];
+        
+        if ([self.userDefaults objectForKey:@"currentSportScoreTypeGname"] != nil && ![[self.userDefaults objectForKey:@"currentSportScoreTypeGname"] isEqualToString:@""]) {
+            
+            [self.btnUsScoreC setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
+            [self.btnUsScoreD setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeGname"]];
+            [self.btnThemScoreC setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
+            [self.btnThemScoreD setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeGname"]];
+            
+            [self.btnUsScoreB setHidden:YES];
+            [self.btnThemScoreB setHidden:YES];
+            [self.grp2 setHidden:YES];
+            
+            [self.btnUsScoreC setHidden:NO];
+            [self.btnUsScoreD setHidden:NO];
+            [self.btnThemScoreC setHidden:NO];
+            [self.btnThemScoreD setHidden:NO];
+            [self.grp3 setHidden:NO];
+        } else {
+            [self.btnUsScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
+            [self.btnThemScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
+            
+            [self.btnUsScoreB setHidden:NO];
+            [self.btnThemScoreB setHidden:NO];
+            [self.grp2 setHidden:NO];
+            
+            [self.btnUsScoreC setHidden:YES];
+            [self.btnUsScoreD setHidden:YES];
+            [self.btnThemScoreC setHidden:YES];
+            [self.btnThemScoreD setHidden:YES];
+            [self.grp3 setHidden:YES];
+        }
     } else {
-        NSLog(@"hide, hide");
         [self.btnUsScoreB setHidden:YES];
         [self.btnThemScoreB setHidden:YES];
+        
+        [self.btnUsScoreC setHidden:YES];
+        [self.btnUsScoreD setHidden:YES];
+        [self.btnThemScoreC setHidden:YES];
+        [self.btnThemScoreD setHidden:YES];
     }
 }
 
@@ -273,16 +326,32 @@
     [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"]];
 }
 
-- (IBAction)tchUsScoreB {
-    [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
-}
-
 - (IBAction)tchThemScoreA {
     [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"]];
 }
 
+- (IBAction)tchUsScoreB {
+    [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
+}
+
 - (IBAction)tchThemScoreB {
     [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
+}
+
+- (IBAction)tchUsScoreC {
+    [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
+}
+
+- (IBAction)tchThemScoreC {
+    [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
+}
+
+- (IBAction)tchUsScoreD {
+    [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeGpoints"]];
+}
+
+- (IBAction)tchThemScoreD {
+    [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeGpoints"]];
 }
 
 - (IBAction)tchPlay {

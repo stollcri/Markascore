@@ -41,10 +41,12 @@
         <attribute name="scoreTypeEpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="scoreTypeFname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scoreTypeFpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scoreTypeGname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoreTypeGpoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="Game" positionX="-45" positionY="90" width="128" height="240"/>
         <element name="Options" positionX="-27" positionY="153" width="128" height="135"/>
-        <element name="Sport" positionX="-63" positionY="-18" width="128" height="300"/>
+        <element name="Sport" positionX="-63" positionY="-18" width="128" height="330"/>
     </elements>
 </model>

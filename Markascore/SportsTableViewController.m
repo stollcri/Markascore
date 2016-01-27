@@ -49,6 +49,8 @@
         moAcademicChallenge.scoreTypeEpoints = @10;
         moAcademicChallenge.scoreTypeFname = @"Bonus";
         moAcademicChallenge.scoreTypeFpoints = @5;
+        moAcademicChallenge.scoreTypeGname = @"";
+        moAcademicChallenge.scoreTypeGpoints = @0;
         moAcademicChallenge.periodTimeUp = @NO;
         moAcademicChallenge.periodTimeUpCum = @NO;
         
@@ -68,6 +70,8 @@
         moSoccer.scoreTypeEpoints = @1;
         moSoccer.scoreTypeFname = @"PK";
         moSoccer.scoreTypeFpoints = @1;
+        moSoccer.scoreTypeGname = @"";
+        moSoccer.scoreTypeGpoints = @0;
         moSoccer.periodTimeUp = @YES;
         moSoccer.periodTimeUpCum = @YES;
         
@@ -85,8 +89,10 @@
         moFutsal.scoreTypeDpoints = @0;
         moFutsal.scoreTypeEname = @"Goal";
         moFutsal.scoreTypeEpoints = @1;
-        moFutsal.scoreTypeFname = @"PK";
-        moFutsal.scoreTypeFpoints = @1;
+        moFutsal.scoreTypeFname = @"";
+        moFutsal.scoreTypeFpoints = @0;
+        moFutsal.scoreTypeGname = @"";
+        moFutsal.scoreTypeGpoints = @0;
         moFutsal.periodTimeUp = @YES;
         moFutsal.periodTimeUpCum = @YES;
         
@@ -106,6 +112,8 @@
         moBaseball.scoreTypeEpoints = @1;
         moBaseball.scoreTypeFname = @"";
         moBaseball.scoreTypeFpoints = @0;
+        moBaseball.scoreTypeGname = @"";
+        moBaseball.scoreTypeGpoints = @0;
         moBaseball.periodTimeUp = @NO;
         moBaseball.periodTimeUpCum = @NO;
         
@@ -125,6 +133,8 @@
         moBasketball.scoreTypeEpoints = @2;
         moBasketball.scoreTypeFname = @"1";
         moBasketball.scoreTypeFpoints = @1;
+        moBasketball.scoreTypeGname = @"3";
+        moBasketball.scoreTypeGpoints = @3;
         moBasketball.periodTimeUp = @NO;
         moBasketball.periodTimeUpCum = @NO;
         
@@ -140,10 +150,12 @@
         moFootball.scoreTypeCpoints = @1;
         moFootball.scoreTypeDname = @"2PC";
         moFootball.scoreTypeDpoints = @2;
-        moFootball.scoreTypeEname = @"3";
-        moFootball.scoreTypeEpoints = @3;
-        moFootball.scoreTypeFname = @"1";
-        moFootball.scoreTypeFpoints = @1;
+        moFootball.scoreTypeEname = @"TD";
+        moFootball.scoreTypeEpoints = @6;
+        moFootball.scoreTypeFname = @"3";
+        moFootball.scoreTypeFpoints = @3;
+        moFootball.scoreTypeGname = @"1";
+        moFootball.scoreTypeGpoints = @1;
         moFootball.periodTimeUp = @NO;
         moFootball.periodTimeUpCum = @NO;
         
@@ -163,6 +175,8 @@
         moPingPong.scoreTypeEpoints = @1;
         moPingPong.scoreTypeFname = @"";
         moPingPong.scoreTypeFpoints = @0;
+        moPingPong.scoreTypeGname = @"";
+        moPingPong.scoreTypeGpoints = @0;
         moPingPong.periodTimeUp = @NO;
         moPingPong.periodTimeUpCum = @NO;
         
@@ -178,10 +192,12 @@
         moRugby.scoreTypeCpoints = @2;
         moRugby.scoreTypeDname = @"";
         moRugby.scoreTypeDpoints = @0;
-        moRugby.scoreTypeEname = @"3";
-        moRugby.scoreTypeEpoints = @3;
-        moRugby.scoreTypeFname = @"1";
-        moRugby.scoreTypeFpoints = @1;
+        moRugby.scoreTypeEname = @"Try";
+        moRugby.scoreTypeEpoints = @5;
+        moRugby.scoreTypeFname = @"3";
+        moRugby.scoreTypeFpoints = @3;
+        moRugby.scoreTypeGname = @"2";
+        moRugby.scoreTypeGpoints = @2;
         moRugby.periodTimeUp = @NO;
         moRugby.periodTimeUpCum = @NO;
         
@@ -199,6 +215,8 @@
         moVolleyball.scoreTypeDpoints = @0;
         moVolleyball.scoreTypeEname = @"Point";
         moVolleyball.scoreTypeEpoints = @1;
+        moVolleyball.scoreTypeFname = @"";
+        moVolleyball.scoreTypeFpoints = @0;
         moVolleyball.scoreTypeFname = @"";
         moVolleyball.scoreTypeFpoints = @0;
         moVolleyball.periodTimeUp = @NO;
