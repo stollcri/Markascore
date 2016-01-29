@@ -7,6 +7,7 @@
 //
 
 #import "InterfaceController.h"
+#import "ComplicationController.h"
 
 #define TIMER_UPDATE_MODE_INIT 1
 #define TIMER_UPDATE_MODE_START 2
@@ -51,6 +52,7 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
     [self.userDefaults synchronize];
+    [self updateComplicationScore];
 }
 
 #pragma mark - Connectivity
@@ -238,6 +240,14 @@
         [self.btnUsScoreD setHidden:YES];
         [self.btnThemScoreC setHidden:YES];
         [self.btnThemScoreD setHidden:YES];
+    }
+}
+
+- (void)updateComplicationScore {
+    NSLog(@"updateComplicationScore");
+    CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance];
+    for (CLKComplication *complication in complicationServer.activeComplications) {
+        [complicationServer reloadTimelineForComplication:complication];
     }
 }
 

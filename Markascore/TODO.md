@@ -1,6 +1,6 @@
 # MVP
 
-- Complication should show current score (must work with iOS app?)
+- Score should work with TimeTravel
 - When returning to the app after a long time, if the timer was running, reset the timer or do not update the time
 
 # V1 or V2
