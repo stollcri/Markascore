@@ -16,12 +16,32 @@
 		7D49FC1A1C42036800B73A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D49FC181C42036800B73A7C /* LaunchScreen.storyboard */; };
 		7D49FC251C42036800B73A7C /* MarkascoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC241C42036800B73A7C /* MarkascoreTests.m */; };
 		7D49FC301C42036800B73A7C /* MarkascoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49FC2F1C42036800B73A7C /* MarkascoreUITests.m */; };
-		7DBF7C111C557094008F3C46 /* ScoreboardLogoComplication16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0B1C557094008F3C46 /* ScoreboardLogoComplication16@2x.png */; };
-		7DBF7C121C557094008F3C46 /* ScoreboardLogoComplication18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0C1C557094008F3C46 /* ScoreboardLogoComplication18@2x.png */; };
-		7DBF7C131C557094008F3C46 /* ScoreboardLogoComplication20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0D1C557094008F3C46 /* ScoreboardLogoComplication20@2x.png */; };
-		7DBF7C141C557094008F3C46 /* ScoreboardLogoComplication22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0E1C557094008F3C46 /* ScoreboardLogoComplication22@2x.png */; };
-		7DBF7C151C557094008F3C46 /* ScoreboardLogoComplication26@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C0F1C557094008F3C46 /* ScoreboardLogoComplication26@2x.png */; };
-		7DBF7C161C557094008F3C46 /* ScoreboardLogoComplication29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF7C101C557094008F3C46 /* ScoreboardLogoComplication29@2x.png */; };
+		7D9E40361C5C41D1000A3489 /* ScoreboardLogo-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40291C5C41D1000A3489 /* ScoreboardLogo-60@2x.png */; };
+		7D9E40371C5C41D1000A3489 /* ScoreboardLogo-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E402A1C5C41D1000A3489 /* ScoreboardLogo-60@3x.png */; };
+		7D9E40381C5C41D1000A3489 /* ScoreboardLogo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E402B1C5C41D1000A3489 /* ScoreboardLogo-76.png */; };
+		7D9E40391C5C41D1000A3489 /* ScoreboardLogo-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E402C1C5C41D1000A3489 /* ScoreboardLogo-76@2x.png */; };
+		7D9E403A1C5C41D1000A3489 /* ScoreboardLogo-AppStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E402D1C5C41D1000A3489 /* ScoreboardLogo-AppStore.png */; };
+		7D9E403B1C5C41D1000A3489 /* ScoreboardLogo-AppStore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E402E1C5C41D1000A3489 /* ScoreboardLogo-AppStore@2x.png */; };
+		7D9E403C1C5C41D1000A3489 /* ScoreboardLogo-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E402F1C5C41D1000A3489 /* ScoreboardLogo-Small-40.png */; };
+		7D9E403D1C5C41D1000A3489 /* ScoreboardLogo-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40301C5C41D1000A3489 /* ScoreboardLogo-Small-40@2x.png */; };
+		7D9E403E1C5C41D1000A3489 /* ScoreboardLogo-Small-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40311C5C41D1000A3489 /* ScoreboardLogo-Small-40@3x.png */; };
+		7D9E403F1C5C41D1000A3489 /* ScoreboardLogo-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40321C5C41D1000A3489 /* ScoreboardLogo-Small.png */; };
+		7D9E40401C5C41D1000A3489 /* ScoreboardLogo-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40331C5C41D1000A3489 /* ScoreboardLogo-Small@2x.png */; };
+		7D9E40411C5C41D1000A3489 /* ScoreboardLogo-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40341C5C41D1000A3489 /* ScoreboardLogo-Small@3x.png */; };
+		7D9E40421C5C41D1000A3489 /* ScoreboardLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40351C5C41D1000A3489 /* ScoreboardLogo@2x.png */; };
+		7D9E40441C5C4318000A3489 /* ScoreboardLogo-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40431C5C4318000A3489 /* ScoreboardLogo-83.5@2x.png */; };
+		7D9E404B1C5C441D000A3489 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40451C5C441D000A3489 /* ScoreboardLogo-38-Notification.png */; };
+		7D9E404C1C5C441D000A3489 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40461C5C441D000A3489 /* ScoreboardLogo-38-Short-Look.png */; };
+		7D9E404D1C5C441D000A3489 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40471C5C441D000A3489 /* ScoreboardLogo-42-Long-Look.png */; };
+		7D9E404E1C5C441D000A3489 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40481C5C441D000A3489 /* ScoreboardLogo-42-Notification.png */; };
+		7D9E404F1C5C441D000A3489 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40491C5C441D000A3489 /* ScoreboardLogo-42-Short-Look.png */; };
+		7D9E40501C5C441D000A3489 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E404A1C5C441D000A3489 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
+		7D9E40571C5C4700000A3489 /* ScoreboardLogoComplication16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40511C5C4700000A3489 /* ScoreboardLogoComplication16@2x.png */; };
+		7D9E40581C5C4700000A3489 /* ScoreboardLogoComplication18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40521C5C4700000A3489 /* ScoreboardLogoComplication18@2x.png */; };
+		7D9E40591C5C4700000A3489 /* ScoreboardLogoComplication20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40531C5C4700000A3489 /* ScoreboardLogoComplication20@2x.png */; };
+		7D9E405A1C5C4700000A3489 /* ScoreboardLogoComplication22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40541C5C4700000A3489 /* ScoreboardLogoComplication22@2x.png */; };
+		7D9E405B1C5C4700000A3489 /* ScoreboardLogoComplication26@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40551C5C4700000A3489 /* ScoreboardLogoComplication26@2x.png */; };
+		7D9E405C1C5C4700000A3489 /* ScoreboardLogoComplication29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D9E40561C5C4700000A3489 /* ScoreboardLogoComplication29@2x.png */; };
 		7DF4789A1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
 		7DF4789B1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
 		7DF4789C1C42F2CA0047A9A9 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */; };
@@ -45,28 +65,6 @@
 		7DF478CD1C487E650047A9A9 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C91C487E650047A9A9 /* Options.m */; };
 		7DF478CE1C487E650047A9A9 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C91C487E650047A9A9 /* Options.m */; };
 		7DF478CF1C487E650047A9A9 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF478C91C487E650047A9A9 /* Options.m */; };
-		7DF478DC1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */; };
-		7DF478DD1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */; };
-		7DF478DE1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */; };
-		7DF478DF1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */; };
-		7DF478E01C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */; };
-		7DF478E11C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */; };
-		7DF478E21C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */; };
-		7DF478E31C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */; };
-		7DF478E41C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */; };
-		7DF478E51C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */; };
-		7DF478E61C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */; };
-		7DF478E71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */; };
-		7DF478E81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */; };
-		7DF478E91C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */; };
-		7DF478EA1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */; };
-		7DF478EB1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */; };
-		7DF478EC1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */; };
-		7DF478ED1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */; };
-		7DF478EE1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */; };
-		7DF478EF1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */; };
-		7DF478F11C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */; };
-		7DF478F21C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */; };
 		7DF478F91C4DB9340047A9A9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478F71C4DB9340047A9A9 /* Interface.storyboard */; };
 		7DF478FB1C4DB9340047A9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF478FA1C4DB9340047A9A9 /* Assets.xcassets */; };
 		7DF479021C4DB9340047A9A9 /* MarkascoreWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7DF479011C4DB9340047A9A9 /* MarkascoreWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -76,24 +74,6 @@
 		7DF479131C4DB9340047A9A9 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF479121C4DB9340047A9A9 /* ComplicationController.m */; };
 		7DF479151C4DB9340047A9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479141C4DB9340047A9A9 /* Assets.xcassets */; };
 		7DF479191C4DB9340047A9A9 /* MarkascoreWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7DF478F51C4DB9340047A9A9 /* MarkascoreWatch.app */; };
-		7DF479281C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */; };
-		7DF479291C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */; };
-		7DF4792A1C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */; };
-		7DF4792B1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */; };
-		7DF4792C1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */; };
-		7DF4792D1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */; };
-		7DF4792E1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */; };
-		7DF4792F1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */; };
-		7DF479301C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */; };
-		7DF479311C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */; };
-		7DF479321C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */; };
-		7DF479331C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */; };
-		7DF479341C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */; };
-		7DF479351C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */; };
-		7DF479361C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */; };
-		7DF479371C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
-		7DF479381C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
-		7DF479391C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */; };
 		7DFC8B8F1C507323007B6B45 /* SportsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC8B8E1C507323007B6B45 /* SportsInterfaceController.m */; };
 /* End PBXBuildFile section */
 
@@ -171,12 +151,32 @@
 		7D49FC2B1C42036800B73A7C /* MarkascoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkascoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49FC2F1C42036800B73A7C /* MarkascoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkascoreUITests.m; sourceTree = "<group>"; };
 		7D49FC311C42036800B73A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DBF7C0B1C557094008F3C46 /* ScoreboardLogoComplication16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication16@2x.png"; sourceTree = "<group>"; };
-		7DBF7C0C1C557094008F3C46 /* ScoreboardLogoComplication18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication18@2x.png"; sourceTree = "<group>"; };
-		7DBF7C0D1C557094008F3C46 /* ScoreboardLogoComplication20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication20@2x.png"; sourceTree = "<group>"; };
-		7DBF7C0E1C557094008F3C46 /* ScoreboardLogoComplication22@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication22@2x.png"; sourceTree = "<group>"; };
-		7DBF7C0F1C557094008F3C46 /* ScoreboardLogoComplication26@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication26@2x.png"; sourceTree = "<group>"; };
-		7DBF7C101C557094008F3C46 /* ScoreboardLogoComplication29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication29@2x.png"; sourceTree = "<group>"; };
+		7D9E40291C5C41D1000A3489 /* ScoreboardLogo-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-60@2x.png"; sourceTree = "<group>"; };
+		7D9E402A1C5C41D1000A3489 /* ScoreboardLogo-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-60@3x.png"; sourceTree = "<group>"; };
+		7D9E402B1C5C41D1000A3489 /* ScoreboardLogo-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-76.png"; sourceTree = "<group>"; };
+		7D9E402C1C5C41D1000A3489 /* ScoreboardLogo-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-76@2x.png"; sourceTree = "<group>"; };
+		7D9E402D1C5C41D1000A3489 /* ScoreboardLogo-AppStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-AppStore.png"; sourceTree = "<group>"; };
+		7D9E402E1C5C41D1000A3489 /* ScoreboardLogo-AppStore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-AppStore@2x.png"; sourceTree = "<group>"; };
+		7D9E402F1C5C41D1000A3489 /* ScoreboardLogo-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40.png"; sourceTree = "<group>"; };
+		7D9E40301C5C41D1000A3489 /* ScoreboardLogo-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40@2x.png"; sourceTree = "<group>"; };
+		7D9E40311C5C41D1000A3489 /* ScoreboardLogo-Small-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40@3x.png"; sourceTree = "<group>"; };
+		7D9E40321C5C41D1000A3489 /* ScoreboardLogo-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small.png"; sourceTree = "<group>"; };
+		7D9E40331C5C41D1000A3489 /* ScoreboardLogo-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@2x.png"; sourceTree = "<group>"; };
+		7D9E40341C5C41D1000A3489 /* ScoreboardLogo-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@3x.png"; sourceTree = "<group>"; };
+		7D9E40351C5C41D1000A3489 /* ScoreboardLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo@2x.png"; sourceTree = "<group>"; };
+		7D9E40431C5C4318000A3489 /* ScoreboardLogo-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-83.5@2x.png"; sourceTree = "<group>"; };
+		7D9E40451C5C441D000A3489 /* ScoreboardLogo-38-Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-38-Notification.png"; sourceTree = "<group>"; };
+		7D9E40461C5C441D000A3489 /* ScoreboardLogo-38-Short-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-38-Short-Look.png"; sourceTree = "<group>"; };
+		7D9E40471C5C441D000A3489 /* ScoreboardLogo-42-Long-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Long-Look.png"; sourceTree = "<group>"; };
+		7D9E40481C5C441D000A3489 /* ScoreboardLogo-42-Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Notification.png"; sourceTree = "<group>"; };
+		7D9E40491C5C441D000A3489 /* ScoreboardLogo-42-Short-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Short-Look.png"; sourceTree = "<group>"; };
+		7D9E404A1C5C441D000A3489 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-HomeScreen-38-Long-Look.png"; sourceTree = "<group>"; };
+		7D9E40511C5C4700000A3489 /* ScoreboardLogoComplication16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication16@2x.png"; sourceTree = "<group>"; };
+		7D9E40521C5C4700000A3489 /* ScoreboardLogoComplication18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication18@2x.png"; sourceTree = "<group>"; };
+		7D9E40531C5C4700000A3489 /* ScoreboardLogoComplication20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication20@2x.png"; sourceTree = "<group>"; };
+		7D9E40541C5C4700000A3489 /* ScoreboardLogoComplication22@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication22@2x.png"; sourceTree = "<group>"; };
+		7D9E40551C5C4700000A3489 /* ScoreboardLogoComplication26@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication26@2x.png"; sourceTree = "<group>"; };
+		7D9E40561C5C4700000A3489 /* ScoreboardLogoComplication29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogoComplication29@2x.png"; sourceTree = "<group>"; };
 		7DF478981C42F2CA0047A9A9 /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
 		7DF478991C42F2CA0047A9A9 /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
 		7DF478AB1C42F5400047A9A9 /* Sport+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sport+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -196,17 +196,6 @@
 		7DF478C71C487E650047A9A9 /* Options+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Options+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7DF478C81C487E650047A9A9 /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
 		7DF478C91C487E650047A9A9 /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Options.m; sourceTree = "<group>"; };
-		7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-60@2x.png"; sourceTree = "<group>"; };
-		7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-60@3x.png"; sourceTree = "<group>"; };
-		7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-76.png"; sourceTree = "<group>"; };
-		7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-76@2x.png"; sourceTree = "<group>"; };
-		7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40.png"; sourceTree = "<group>"; };
-		7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40@2x.png"; sourceTree = "<group>"; };
-		7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small-40@3x.png"; sourceTree = "<group>"; };
-		7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small.png"; sourceTree = "<group>"; };
-		7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@2x.png"; sourceTree = "<group>"; };
-		7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-Small@3x.png"; sourceTree = "<group>"; };
-		7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-83_5@2x.png"; sourceTree = "<group>"; };
 		7DF478F51C4DB9340047A9A9 /* MarkascoreWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkascoreWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF478F81C4DB9340047A9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7DF478FA1C4DB9340047A9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -223,12 +212,6 @@
 		7DF479121C4DB9340047A9A9 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
 		7DF479141C4DB9340047A9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DF479161C4DB9340047A9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-38-Notification.png"; sourceTree = "<group>"; };
-		7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-38-Short-Look.png"; sourceTree = "<group>"; };
-		7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Long-Look.png"; sourceTree = "<group>"; };
-		7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Notification.png"; sourceTree = "<group>"; };
-		7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-42-Short-Look.png"; sourceTree = "<group>"; };
-		7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScoreboardLogo-HomeScreen-38-Long-Look.png"; sourceTree = "<group>"; };
 		7DFC8B8D1C507323007B6B45 /* SportsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsInterfaceController.h; sourceTree = "<group>"; };
 		7DFC8B8E1C507323007B6B45 /* SportsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsInterfaceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,29 +346,32 @@
 		7DF478D11C4C93AC0047A9A9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				7DF479221C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png */,
-				7DF479231C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png */,
-				7DF479241C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png */,
-				7DF479251C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png */,
-				7DF479261C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png */,
-				7DF479271C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */,
-				7DF478F01C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png */,
-				7DF478D21C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png */,
-				7DF478D31C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png */,
-				7DF478D41C4C93E00047A9A9 /* ScoreboardLogo-76.png */,
-				7DF478D51C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png */,
-				7DF478D61C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png */,
-				7DF478D71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png */,
-				7DF478D81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png */,
-				7DF478D91C4C93E00047A9A9 /* ScoreboardLogo-Small.png */,
-				7DF478DA1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png */,
-				7DF478DB1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png */,
-				7DBF7C0B1C557094008F3C46 /* ScoreboardLogoComplication16@2x.png */,
-				7DBF7C0C1C557094008F3C46 /* ScoreboardLogoComplication18@2x.png */,
-				7DBF7C0D1C557094008F3C46 /* ScoreboardLogoComplication20@2x.png */,
-				7DBF7C0E1C557094008F3C46 /* ScoreboardLogoComplication22@2x.png */,
-				7DBF7C0F1C557094008F3C46 /* ScoreboardLogoComplication26@2x.png */,
-				7DBF7C101C557094008F3C46 /* ScoreboardLogoComplication29@2x.png */,
+				7D9E40291C5C41D1000A3489 /* ScoreboardLogo-60@2x.png */,
+				7D9E402A1C5C41D1000A3489 /* ScoreboardLogo-60@3x.png */,
+				7D9E402B1C5C41D1000A3489 /* ScoreboardLogo-76.png */,
+				7D9E402C1C5C41D1000A3489 /* ScoreboardLogo-76@2x.png */,
+				7D9E402D1C5C41D1000A3489 /* ScoreboardLogo-AppStore.png */,
+				7D9E402E1C5C41D1000A3489 /* ScoreboardLogo-AppStore@2x.png */,
+				7D9E402F1C5C41D1000A3489 /* ScoreboardLogo-Small-40.png */,
+				7D9E40301C5C41D1000A3489 /* ScoreboardLogo-Small-40@2x.png */,
+				7D9E40311C5C41D1000A3489 /* ScoreboardLogo-Small-40@3x.png */,
+				7D9E40321C5C41D1000A3489 /* ScoreboardLogo-Small.png */,
+				7D9E40331C5C41D1000A3489 /* ScoreboardLogo-Small@2x.png */,
+				7D9E40341C5C41D1000A3489 /* ScoreboardLogo-Small@3x.png */,
+				7D9E40351C5C41D1000A3489 /* ScoreboardLogo@2x.png */,
+				7D9E40431C5C4318000A3489 /* ScoreboardLogo-83.5@2x.png */,
+				7D9E40451C5C441D000A3489 /* ScoreboardLogo-38-Notification.png */,
+				7D9E40461C5C441D000A3489 /* ScoreboardLogo-38-Short-Look.png */,
+				7D9E40471C5C441D000A3489 /* ScoreboardLogo-42-Long-Look.png */,
+				7D9E40481C5C441D000A3489 /* ScoreboardLogo-42-Notification.png */,
+				7D9E40491C5C441D000A3489 /* ScoreboardLogo-42-Short-Look.png */,
+				7D9E404A1C5C441D000A3489 /* ScoreboardLogo-HomeScreen-38-Long-Look.png */,
+				7D9E40511C5C4700000A3489 /* ScoreboardLogoComplication16@2x.png */,
+				7D9E40521C5C4700000A3489 /* ScoreboardLogoComplication18@2x.png */,
+				7D9E40531C5C4700000A3489 /* ScoreboardLogoComplication20@2x.png */,
+				7D9E40541C5C4700000A3489 /* ScoreboardLogoComplication22@2x.png */,
+				7D9E40551C5C4700000A3489 /* ScoreboardLogoComplication26@2x.png */,
+				7D9E40561C5C4700000A3489 /* ScoreboardLogoComplication29@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -578,26 +564,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF478EA1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */,
-				7DF479311C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */,
+				7D9E40581C5C4700000A3489 /* ScoreboardLogoComplication18@2x.png in Resources */,
 				7D49FC1A1C42036800B73A7C /* LaunchScreen.storyboard in Resources */,
-				7DF478E01C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */,
-				7DF478EC1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */,
-				7DF478E41C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */,
-				7DF478E61C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */,
-				7DF479371C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
-				7DF478E21C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */,
-				7DF478DC1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */,
-				7DF478F11C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */,
-				7DF479341C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */,
-				7DF478EE1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */,
-				7DF478E81C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */,
+				7D9E40381C5C41D1000A3489 /* ScoreboardLogo-76.png in Resources */,
+				7D9E40501C5C441D000A3489 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
+				7D9E403D1C5C41D1000A3489 /* ScoreboardLogo-Small-40@2x.png in Resources */,
+				7D9E405C1C5C4700000A3489 /* ScoreboardLogoComplication29@2x.png in Resources */,
+				7D9E40391C5C41D1000A3489 /* ScoreboardLogo-76@2x.png in Resources */,
+				7D9E404E1C5C441D000A3489 /* ScoreboardLogo-42-Notification.png in Resources */,
+				7D9E40361C5C41D1000A3489 /* ScoreboardLogo-60@2x.png in Resources */,
+				7D9E404D1C5C441D000A3489 /* ScoreboardLogo-42-Long-Look.png in Resources */,
 				7D49FC171C42036800B73A7C /* Assets.xcassets in Resources */,
-				7DF479281C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */,
-				7DF4792E1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */,
-				7DF478DE1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */,
-				7DF4792B1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */,
+				7D9E404B1C5C441D000A3489 /* ScoreboardLogo-38-Notification.png in Resources */,
+				7D9E40591C5C4700000A3489 /* ScoreboardLogoComplication20@2x.png in Resources */,
+				7D9E40371C5C41D1000A3489 /* ScoreboardLogo-60@3x.png in Resources */,
+				7D9E40421C5C41D1000A3489 /* ScoreboardLogo@2x.png in Resources */,
+				7D9E403A1C5C41D1000A3489 /* ScoreboardLogo-AppStore.png in Resources */,
+				7D9E404F1C5C441D000A3489 /* ScoreboardLogo-42-Short-Look.png in Resources */,
+				7D9E40571C5C4700000A3489 /* ScoreboardLogoComplication16@2x.png in Resources */,
+				7D9E403F1C5C41D1000A3489 /* ScoreboardLogo-Small.png in Resources */,
+				7D9E403E1C5C41D1000A3489 /* ScoreboardLogo-Small-40@3x.png in Resources */,
+				7D9E40441C5C4318000A3489 /* ScoreboardLogo-83.5@2x.png in Resources */,
+				7D9E40411C5C41D1000A3489 /* ScoreboardLogo-Small@3x.png in Resources */,
 				7D49FC121C42036800B73A7C /* Main.storyboard in Resources */,
+				7D9E40401C5C41D1000A3489 /* ScoreboardLogo-Small@2x.png in Resources */,
+				7D9E405A1C5C4700000A3489 /* ScoreboardLogoComplication22@2x.png in Resources */,
+				7D9E404C1C5C441D000A3489 /* ScoreboardLogo-38-Short-Look.png in Resources */,
+				7D9E403C1C5C41D1000A3489 /* ScoreboardLogo-Small-40.png in Resources */,
+				7D9E403B1C5C41D1000A3489 /* ScoreboardLogo-AppStore@2x.png in Resources */,
+				7D9E405B1C5C4700000A3489 /* ScoreboardLogoComplication26@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,23 +607,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF478EF1C4C93E00047A9A9 /* ScoreboardLogo-Small@3x.png in Resources */,
-				7DF478E31C4C93E00047A9A9 /* ScoreboardLogo-76@2x.png in Resources */,
-				7DF478DF1C4C93E00047A9A9 /* ScoreboardLogo-60@3x.png in Resources */,
-				7DF478E11C4C93E00047A9A9 /* ScoreboardLogo-76.png in Resources */,
-				7DF479351C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */,
-				7DF4792C1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */,
-				7DF478ED1C4C93E00047A9A9 /* ScoreboardLogo-Small@2x.png in Resources */,
-				7DF479381C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
-				7DF478E71C4C93E00047A9A9 /* ScoreboardLogo-Small-40@2x.png in Resources */,
-				7DF479321C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */,
-				7DF479291C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */,
-				7DF478F21C4C948B0047A9A9 /* ScoreboardLogo-83_5@2x.png in Resources */,
-				7DF478E51C4C93E00047A9A9 /* ScoreboardLogo-Small-40.png in Resources */,
-				7DF478DD1C4C93E00047A9A9 /* ScoreboardLogo-60@2x.png in Resources */,
-				7DF4792F1C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */,
-				7DF478EB1C4C93E00047A9A9 /* ScoreboardLogo-Small.png in Resources */,
-				7DF478E91C4C93E00047A9A9 /* ScoreboardLogo-Small-40@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,14 +614,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF479301C4DBA350047A9A9 /* ScoreboardLogo-42-Long-Look.png in Resources */,
-				7DF479331C4DBA350047A9A9 /* ScoreboardLogo-42-Notification.png in Resources */,
-				7DF479361C4DBA350047A9A9 /* ScoreboardLogo-42-Short-Look.png in Resources */,
-				7DF4792A1C4DBA350047A9A9 /* ScoreboardLogo-38-Notification.png in Resources */,
 				7DF478FB1C4DB9340047A9A9 /* Assets.xcassets in Resources */,
-				7DF4792D1C4DBA350047A9A9 /* ScoreboardLogo-38-Short-Look.png in Resources */,
 				7DF478F91C4DB9340047A9A9 /* Interface.storyboard in Resources */,
-				7DF479391C4DBA350047A9A9 /* ScoreboardLogo-HomeScreen-38-Long-Look.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,13 +623,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DBF7C141C557094008F3C46 /* ScoreboardLogoComplication22@2x.png in Resources */,
-				7DBF7C111C557094008F3C46 /* ScoreboardLogoComplication16@2x.png in Resources */,
-				7DBF7C131C557094008F3C46 /* ScoreboardLogoComplication20@2x.png in Resources */,
 				7DF479151C4DB9340047A9A9 /* Assets.xcassets in Resources */,
-				7DBF7C161C557094008F3C46 /* ScoreboardLogoComplication29@2x.png in Resources */,
-				7DBF7C121C557094008F3C46 /* ScoreboardLogoComplication18@2x.png in Resources */,
-				7DBF7C151C557094008F3C46 /* ScoreboardLogoComplication26@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

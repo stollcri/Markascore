@@ -56,8 +56,21 @@
             //
             break;
         case CLKComplicationFamilyModularLarge: {
-            NSString *textUs = [NSString stringWithFormat:@"%@ - %@", nameUs, scoreUs];
-            NSString *textThem = [NSString stringWithFormat:@"%@ - %@", nameThem, scoreThem];
+            NSString *tmpNameUs = [[NSString alloc] init];
+            NSString *tmpNameThem = [[NSString alloc] init];
+            if ([nameUs length] > 10) {
+                tmpNameUs = [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 10)]];
+            } else {
+                tmpNameUs = nameUs;
+            }
+            if ([nameThem length] > 10) {
+                tmpNameThem = [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 10)]];
+            } else {
+                tmpNameThem = nameThem;
+            }
+            
+            NSString *textUs = [NSString stringWithFormat:@"%@ - %@", tmpNameUs, scoreUs];
+            NSString *textThem = [NSString stringWithFormat:@"%@ - %@", tmpNameThem, scoreThem];
             //NSLog(@"ML textUs:   %@", textUs);
             //NSLog(@"ML textThem: %@", textThem);
             
@@ -72,7 +85,16 @@
             break;
         }
         case CLKComplicationFamilyUtilitarianSmall: {
-            NSString *textScores = [NSString stringWithFormat:@"%@ %@ - %@ %@", [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]], scoreUs, scoreThem, [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]]];
+            NSString *textScores = [[NSString alloc] init];
+            if ([scoreUs length] > 1 && [scoreThem length] > 1) {
+                if ([scoreUs length] > 2 && [scoreThem length] > 2) {
+                    textScores = [NSString stringWithFormat:@"%@ - %@", scoreUs, scoreThem];
+                } else {
+                    textScores = [NSString stringWithFormat:@"%@ %@ - %@", [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]], scoreUs, scoreThem];
+                }
+            } else {
+                textScores = [NSString stringWithFormat:@"%@ %@ - %@ %@", [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]], scoreUs, scoreThem, [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]]];
+            }
             //NSLog(@"US textUs: %@", textScores);
             
             CLKComplicationTemplateUtilitarianSmallFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianSmallFlat alloc] init];
@@ -84,7 +106,19 @@
             break;
         }
         case CLKComplicationFamilyUtilitarianLarge: {
-            NSString *textScores = [NSString stringWithFormat:@"%@ %@ - %@ %@", nameUs, scoreUs, scoreThem, nameThem];
+            NSString *tmpNameUs = [[NSString alloc] init];
+            NSString *tmpNameThem = [[NSString alloc] init];
+            if ([nameUs length] > 6) {
+                tmpNameUs = [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 6)]];
+            } else {
+                tmpNameUs = nameUs;
+            }
+            if ([nameThem length] > 6) {
+                tmpNameThem = [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 6)]];
+            } else {
+                tmpNameThem = nameThem;
+            }
+            NSString *textScores = [NSString stringWithFormat:@"%@ %@ - %@ %@", tmpNameUs, scoreUs, scoreThem, tmpNameThem];
             //NSLog(@"UL textUs: %@", textScores);
             
             CLKComplicationTemplateUtilitarianLargeFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianLargeFlat alloc] init];
