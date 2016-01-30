@@ -37,7 +37,7 @@
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
     // Call the handler with the current timeline entry
     //handler(nil);
-    NSLog(@"getCurrentTimelineEntryForComplication");
+    //NSLog(@"getCurrentTimelineEntryForComplication");
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *nameUs = [userDefaults objectForKey:@"teamA"];
@@ -165,7 +165,7 @@
 - (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
     // This method will be called once per supported complication, and the results will be cached
     handler(nil);
-    NSLog(@"getPlaceholderTemplateForComplication");
+    //NSLog(@"getPlaceholderTemplateForComplication");
     /*
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *nameUs = [userDefaults objectForKey:@"teamA"];

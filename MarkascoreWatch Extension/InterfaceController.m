@@ -117,11 +117,11 @@
                                    }
                                    errorHandler:^(NSError *error) {
                                        //catch any errors here
-                                       NSLog(@"Watch: ERROR message");
+                                       //NSLog(@"Watch: ERROR message");
                                    }
          ];
     } else {
-        NSLog(@"Session NOT reachable");
+        //NSLog(@"Session NOT reachable");
     }
 }
 
@@ -244,7 +244,7 @@
 }
 
 - (void)updateComplicationScore {
-    NSLog(@"updateComplicationScore");
+    //NSLog(@"updateComplicationScore");
     CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance];
     for (CLKComplication *complication in complicationServer.activeComplications) {
         [complicationServer reloadTimelineForComplication:complication];

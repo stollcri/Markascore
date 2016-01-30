@@ -216,7 +216,7 @@
              */
             
             if ([moSport.name isEqualToString:[watchData objectForKey:@"gameSport"]]) {
-                NSLog(@"OK");
+                //NSLog(@"OK");
                 [watchData setObject:moSport.name forKey:@"currentSportName"];
                 [watchData setObject:moSport.periodQuantity forKey:@"currentSportPeriodQuantity"];
                 [watchData setObject:moSport.periodTime forKey:@"currentSportPeriodTime"];
