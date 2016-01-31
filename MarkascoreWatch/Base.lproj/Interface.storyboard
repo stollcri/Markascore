@@ -50,58 +50,73 @@
                         </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="U6N-lL-yLB">
                             <items>
-                                <button width="32" alignment="left" hidden="YES" title="X" id="4hS-FL-KPf">
+                                <button width="32" alignment="left" verticalAlignment="center" title="X" id="4hS-FL-KPf">
                                     <variation key="device=watch42mm" width="37"/>
                                     <connections>
                                         <action selector="tchUsScoreC" destination="AgC-eL-Hgc" id="Tid-gA-QpP"/>
                                     </connections>
                                 </button>
-                                <button width="32" alignment="left" hidden="YES" title="Y" id="oax-Vj-Ruj">
+                                <button width="32" alignment="left" verticalAlignment="center" title="Y" id="oax-Vj-Ruj">
                                     <variation key="device=watch42mm" width="37"/>
                                     <connections>
                                         <action selector="tchUsScoreD" destination="AgC-eL-Hgc" id="VUM-4c-8iI"/>
                                     </connections>
                                 </button>
-                                <button width="32" alignment="right" hidden="YES" title="X" id="4lE-Pl-4p0">
-                                    <variation key="device=watch42mm" width="37"/>
-                                    <connections>
-                                        <action selector="tchThemScoreC" destination="AgC-eL-Hgc" id="4Zt-hw-ce2"/>
-                                    </connections>
-                                </button>
-                                <button width="32" alignment="right" hidden="YES" title="Y" id="iBL-sm-XnT">
+                                <button width="32" alignment="right" verticalAlignment="center" title="Y" id="iBL-sm-XnT">
                                     <variation key="device=watch42mm" width="37"/>
                                     <connections>
                                         <action selector="tchThemScoreD" destination="AgC-eL-Hgc" id="BRt-Be-wVO"/>
+                                    </connections>
+                                </button>
+                                <button width="32" alignment="right" verticalAlignment="center" title="X" id="4lE-Pl-4p0">
+                                    <variation key="device=watch42mm" width="37"/>
+                                    <connections>
+                                        <action selector="tchThemScoreC" destination="AgC-eL-Hgc" id="4Zt-hw-ce2"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="0OU-Zq-v6a">
                             <items>
-                                <button width="64" alignment="left" title="Point" id="y6W-5Z-sfo">
-                                    <variation key="device=watch42mm" width="74"/>
+                                <button width="42" alignment="left" verticalAlignment="center" title="X" id="y6W-5Z-sfo">
+                                    <variation key="device=watch42mm" width="49"/>
                                     <connections>
                                         <action selector="tchUsScoreB" destination="AgC-eL-Hgc" id="TDm-vY-eGq"/>
                                     </connections>
                                 </button>
-                                <button width="64" alignment="right" title="Point" id="q4E-wk-hb9">
-                                    <variation key="device=watch42mm" width="74"/>
+                                <button width="42" alignment="center" verticalAlignment="center" title="❌" id="7a5-un-hRw">
+                                    <variation key="device=watch42mm" width="49"/>
+                                    <connections>
+                                        <action selector="tchUndoB" destination="AgC-eL-Hgc" id="sZU-U6-awN"/>
+                                    </connections>
+                                </button>
+                                <button width="42" alignment="right" verticalAlignment="center" title="X" id="q4E-wk-hb9">
+                                    <variation key="device=watch42mm" width="49"/>
                                     <connections>
                                         <action selector="tchThemScoreB" destination="AgC-eL-Hgc" id="Gn6-75-hRE"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="i2V-Ag-Apj">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="center" title="❌" id="R0x-Gs-VHU">
+                                    <connections>
+                                        <action selector="tchUndoA" destination="AgC-eL-Hgc" id="H4e-E0-54L"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="7fx-b2-26i">
                             <items>
-                                <button width="64" alignment="left" title="Score" id="XDA-Le-5IN">
-                                    <variation key="device=watch42mm" width="74"/>
+                                <button width="65" alignment="left" verticalAlignment="center" title="Score" id="XDA-Le-5IN">
+                                    <variation key="device=watch42mm" width="75"/>
                                     <connections>
                                         <action selector="tchUsScoreA" destination="AgC-eL-Hgc" id="3jF-YA-9bH"/>
                                     </connections>
                                 </button>
-                                <button width="64" alignment="right" title="Score" id="hWg-VE-uU5">
-                                    <variation key="device=watch42mm" width="74"/>
+                                <button width="65" alignment="right" verticalAlignment="center" title="Score" id="hWg-VE-uU5">
+                                    <variation key="device=watch42mm" width="75"/>
                                     <connections>
                                         <action selector="tchThemScoreA" destination="AgC-eL-Hgc" id="UIv-6k-lch"/>
                                     </connections>
@@ -148,10 +163,14 @@
                         <outlet property="btnThemScoreB" destination="q4E-wk-hb9" id="Sya-vy-tFE"/>
                         <outlet property="btnThemScoreC" destination="4lE-Pl-4p0" id="EsP-gq-g4E"/>
                         <outlet property="btnThemScoreD" destination="iBL-sm-XnT" id="kpK-kk-gpT"/>
+                        <outlet property="btnUndoA" destination="R0x-Gs-VHU" id="PAs-Df-xpl"/>
+                        <outlet property="btnUndoB" destination="7a5-un-hRw" id="DgO-ck-AJ7"/>
                         <outlet property="btnUsScoreA" destination="XDA-Le-5IN" id="fDA-WY-ruq"/>
                         <outlet property="btnUsScoreB" destination="y6W-5Z-sfo" id="KWd-IL-IEV"/>
                         <outlet property="btnUsScoreC" destination="4hS-FL-KPf" id="foW-aZ-jRI"/>
                         <outlet property="btnUsScoreD" destination="oax-Vj-Ruj" id="UpD-bj-uJP"/>
+                        <outlet property="grp0" destination="7fx-b2-26i" id="h4V-05-WyL"/>
+                        <outlet property="grp1" destination="i2V-Ag-Apj" id="Ng1-Ig-DGv"/>
                         <outlet property="grp2" destination="0OU-Zq-v6a" id="NG9-TO-7az"/>
                         <outlet property="grp3" destination="U6N-lL-yLB" id="c5n-Mc-gXw"/>
                         <outlet property="labThem" destination="Sem-X8-YS0" id="pOQ-VB-kY9"/>

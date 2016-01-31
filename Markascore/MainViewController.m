@@ -11,9 +11,8 @@
 #import "SportsTableViewController.h"
 #import "OptionsTableViewController.h"
 
-@interface MainViewController () {
-    @private NSUndoManager *undoManager;
-}
+@interface MainViewController()
+
 @end
 
 @implementation MainViewController
@@ -129,7 +128,6 @@
     if ([[segue identifier] isEqualToString:@"showSports"]){
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         [[segue destinationViewController] setHasWatch:self.currentOptions.hasWatch];
-        [self.undoManager removeAllActions];
     } else if ([[segue identifier] isEqualToString:@"showOptions"]){
         OptionsTableViewController *tempVC = [segue destinationViewController];
         [tempVC setOptionsDetail:self.currentOptions];
@@ -142,22 +140,30 @@
         SportsTableViewController *sportsTableViewController = segue.sourceViewController;
         // and they changed the sport (touched a sport name rather than hitting back)
         if(sportsTableViewController.currentSport) {
-            // set the current sport
-            self.currentSport = sportsTableViewController.currentSport;
-            // reset the current game
-            self.currentGame.sportName = self.currentSport.name;
-            self.currentGame.period = @1;
-            self.currentGame.scoreUs = @0;
-            self.currentGame.scoreThem = @0;
-            self.currentGame.timeCountUp = self.currentSport.periodTimeUp;
-            self.currentGame.timeCountUpCum = self.currentSport.periodTimeUpCum;
-            self.currentGame.timeElapsedSeconds = @0;
-            self.currentGame.timeRunning = @0;
-            self.currentGame.timeStartedAt = NULL;
-            self.currentGame.timeSaveMinutes = @0;
-            self.currentGame.timeSaveSeconds = @0;
-            [self resetTime];
-            [self updateUI];
+            Sport *newSport = sportsTableViewController.currentSport;
+            // and the sport actually changed
+            if (![newSport.name isEqualToString:self.currentSport.name]) {
+                // set the current sport
+                self.currentSport = sportsTableViewController.currentSport;
+                // reset the current game
+                self.currentGame.sportName = self.currentSport.name;
+                self.currentGame.period = @1;
+                self.currentGame.scoreUs = @0;
+                self.currentGame.scoreThem = @0;
+                self.currentGame.timeCountUp = self.currentSport.periodTimeUp;
+                self.currentGame.timeCountUpCum = self.currentSport.periodTimeUpCum;
+                self.currentGame.timeElapsedSeconds = @0;
+                self.currentGame.timeRunning = @0;
+                self.currentGame.timeStartedAt = NULL;
+                self.currentGame.timeSaveMinutes = @0;
+                self.currentGame.timeSaveSeconds = @0;
+                //
+                // TODO: this is not working
+                //
+                [self.undoManager removeAllActions];
+                [self resetTime];
+                [self updateUI];
+            }
         }
         
         if (!self.currentSport) {
@@ -424,9 +430,11 @@
 }
 
 - (void)undoScoreUs:(NSNumber*)increment {
-    self.currentGame.scoreUs = @([self.currentGame.scoreUs intValue] - [increment intValue]);
-    [self.labUsScore setText:[self.currentGame.scoreUs stringValue]];
-    [self saveState];
+    if ([self.currentGame.scoreUs intValue] >= [increment intValue]) {
+        self.currentGame.scoreUs = @([self.currentGame.scoreUs intValue] - [increment intValue]);
+        [self.labUsScore setText:[self.currentGame.scoreUs stringValue]];
+        [self saveState];
+    }
 }
 
 - (void)updateScoreUs:(NSNumber*)increment {
@@ -437,9 +445,11 @@
 }
 
 - (void)undoScoreThem:(NSNumber*)increment {
-    self.currentGame.scoreThem = @([self.currentGame.scoreThem intValue] - [increment intValue]);
-    [self.labThemScore setText:[self.currentGame.scoreThem stringValue]];
-    [self saveState];
+    if ([self.currentGame.scoreThem intValue] >= [increment intValue]) {
+        self.currentGame.scoreThem = @([self.currentGame.scoreThem intValue] - [increment intValue]);
+        [self.labThemScore setText:[self.currentGame.scoreThem stringValue]];
+        [self saveState];
+    }
 }
 
 - (void)updateScoreThem:(NSNumber*)increment {

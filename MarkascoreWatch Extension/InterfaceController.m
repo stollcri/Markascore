@@ -20,7 +20,6 @@
 
 
 @implementation InterfaceController
-
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
@@ -35,6 +34,8 @@
     }
     
     self.userDefaults = [NSUserDefaults standardUserDefaults];
+    self.undoManager = [[NSUndoManager alloc] init];
+    
     // check for UI sanity
     [self validateUI];
     // and update the UI now
@@ -111,6 +112,7 @@
                                            
                                            [self.userDefaults setObject:@0 forKey:@"gameScoreUs"];
                                            [self.userDefaults setObject:@0 forKey:@"gameScoreThem"];
+                                           [self.undoManager removeAllActions];
                                        }
                                        [self validateUI];
                                        [self updateUI];
@@ -160,8 +162,16 @@
         }
         // if there is a secondary scoring value, then show the secondary scoring buttons
         if ([[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"] boolValue]) {
+            [self.grp1 setHidden:YES];
+            [self.btnUndoA setHidden:YES];
+            
             if ([[self.userDefaults objectForKey:@"currentSportScoreTypeGpoints"] boolValue]) {
+                [self.grp2 setHidden:YES];
+                [self.grp3 setHidden:NO];
+                
+                [self.grp2 setHidden:YES];
                 [self.btnUsScoreB setHidden:YES];
+                [self.btnUndoB setHidden:YES];
                 [self.btnThemScoreB setHidden:YES];
                 
                 [self.btnUsScoreC setHidden:NO];
@@ -169,7 +179,11 @@
                 [self.btnThemScoreC setHidden:NO];
                 [self.btnThemScoreD setHidden:NO];
             } else {
+                [self.grp2 setHidden:NO];
+                [self.grp3 setHidden:YES];
+                
                 [self.btnUsScoreB setHidden:NO];
+                [self.btnUndoB setHidden:NO];
                 [self.btnThemScoreB setHidden:NO];
                 
                 [self.btnUsScoreC setHidden:YES];
@@ -178,7 +192,14 @@
                 [self.btnThemScoreD setHidden:YES];
             }
         } else {
+            [self.grp1 setHidden:NO];
+            [self.grp2 setHidden:YES];
+            [self.grp3 setHidden:YES];
+            
+            [self.btnUndoA setHidden:NO];
+            
             [self.btnUsScoreB setHidden:YES];
+            [self.btnUndoB setHidden:YES];
             [self.btnThemScoreB setHidden:YES];
             
             [self.btnUsScoreC setHidden:YES];
@@ -251,13 +272,31 @@
     }
 }
 
+- (void)undoScoreUs:(NSNumber*)increment {
+    if ([[self.userDefaults objectForKey:@"gameScoreUs"] intValue] >= [increment intValue]) {
+        NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreUs"] intValue] - [increment intValue]);
+        [self.userDefaults setObject:newScore forKey:@"gameScoreUs"];
+        [self.labUsScore setText:[[self.userDefaults objectForKey:@"gameScoreUs"] stringValue]];
+    }
+}
+
 - (void)updateScoreUs:(NSNumber*)increment {
+    [self.undoManager registerUndoWithTarget:self selector:@selector(undoScoreUs:) object:increment];
     NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreUs"] intValue] + [increment intValue]);
     [self.userDefaults setObject:newScore forKey:@"gameScoreUs"];
     [self.labUsScore setText:[[self.userDefaults objectForKey:@"gameScoreUs"] stringValue]];
 }
 
+- (void)undoScoreThem:(NSNumber*)increment {
+    if ([[self.userDefaults objectForKey:@"gameScoreThem"] intValue] >= [increment intValue]) {
+        NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreThem"] intValue] - [increment intValue]);
+        [self.userDefaults setObject:newScore forKey:@"gameScoreThem"];
+        [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
+    }
+}
+
 - (void)updateScoreThem:(NSNumber*)increment {
+    [self.undoManager registerUndoWithTarget:self selector:@selector(undoScoreThem:) object:increment];
     NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreThem"] intValue] + [increment intValue]);
     [self.userDefaults setObject:newScore forKey:@"gameScoreThem"];
     [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
@@ -340,12 +379,24 @@
     [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"]];
 }
 
+- (IBAction)tchUndoA {
+    if ([self.undoManager canUndo]) {
+        [self.undoManager undo];
+    }
+}
+
 - (IBAction)tchUsScoreB {
     [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
 }
 
 - (IBAction)tchThemScoreB {
     [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
+}
+
+- (IBAction)tchUndoB {
+    if ([self.undoManager canUndo]) {
+        [self.undoManager undo];
+    }
 }
 
 - (IBAction)tchUsScoreC {

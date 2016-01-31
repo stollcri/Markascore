@@ -13,6 +13,7 @@
 @interface InterfaceController : WKInterfaceController <WCSessionDelegate>
 
 @property (strong, nonatomic) NSUserDefaults *userDefaults;
+@property (strong, nonatomic) NSUndoManager *undoManager;
 @property (nonatomic) BOOL timerRunning;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTimer *tmrMain;
@@ -25,8 +26,10 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreA;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreA;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUndoA;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreB;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUndoB;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreB;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreC;
@@ -36,11 +39,15 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp2;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp3;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp1;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp0;
 
 - (IBAction)tchUsScoreA;
 - (IBAction)tchThemScoreA;
+- (IBAction)tchUndoA;
 
 - (IBAction)tchUsScoreB;
+- (IBAction)tchUndoB;
 - (IBAction)tchThemScoreB;
 
 - (IBAction)tchUsScoreC;
