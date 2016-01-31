@@ -356,7 +356,9 @@
                 if (([self.currentGame.timeElapsedMinutes intValue] > 0) || ([self.currentGame.timeElapsedSeconds intValue] > 0)) {
                     NSTimeInterval timeDiff = [[NSDate date] timeIntervalSinceDate:self.currentGame.timeStartedAt];
                     NSNumber *cumMinutes = @([self.currentGame.timeSaveMinutes intValue] + floor(timeDiff/60));
-                    NSNumber *cumSeconds = @([self.currentGame.timeSaveSeconds intValue] + round(timeDiff - floor(timeDiff / 60) * 60));
+                    NSNumber *cumSeconds = @((60 - [self.currentGame.timeSaveSeconds intValue]) + round(timeDiff - floor(timeDiff / 60) * 60));
+                    
+                    NSLog(@"%@:%@", cumMinutes, cumSeconds);
                     
                     if ([cumSeconds intValue] > 60) {
                         cumMinutes = @([cumMinutes intValue] + 1);
