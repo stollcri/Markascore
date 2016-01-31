@@ -152,62 +152,33 @@
         [self.userDefaults setObject:@YES forKey:@"gameTimeCountUp"];
     }
     
-    // if there is no scoring value, then set it to a default value so the user can do something
-    if ([self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"] == nil && [self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"] == nil) {
+    // make sure there is a primary score name
+    if ([self.userDefaults objectForKey:@"currentSportScoreTypeEname"] == nil) {
+        [self.userDefaults setObject:@"Score" forKey:@"currentSportScoreTypeEname"];
+    }
+    // make sure there is a primary score value
+    if ([self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"] == nil) {
         [self.userDefaults setObject:@1 forKey:@"currentSportScoreTypeEpoints"];
+    }
+    
+    // make sure secondary values are consistent
+    if ([self.userDefaults objectForKey:@"currentSportScoreTypeFname"] == nil || [[self.userDefaults objectForKey:@"currentSportScoreTypeFname"] isEqualToString:@""] || [self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"] == nil) {
+        
+        [self.userDefaults setObject:@"" forKey:@"currentSportScoreTypeFname"];
+        [self.userDefaults setObject:@0 forKey:@"currentSportScoreTypeFpoints"];
+        
+        [self.userDefaults setObject:@"" forKey:@"currentSportScoreTypeGname"];
+        [self.userDefaults setObject:@0 forKey:@"currentSportScoreTypeGpoints"];
+        
     } else {
-        // if there is no primary scoring value, then set it to a default so the user can score
-        if ([self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"] == nil) {
-            [self.userDefaults setObject:@1 forKey:@"currentSportScoreTypeEname"];
-        }
-        // if there is a secondary scoring value, then show the secondary scoring buttons
-        if ([[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"] boolValue]) {
-            [self.grp1 setHidden:YES];
-            [self.btnUndoA setHidden:YES];
-            
-            if ([[self.userDefaults objectForKey:@"currentSportScoreTypeGpoints"] boolValue]) {
-                [self.grp2 setHidden:YES];
-                [self.grp3 setHidden:NO];
-                
-                [self.grp2 setHidden:YES];
-                [self.btnUsScoreB setHidden:YES];
-                [self.btnUndoB setHidden:YES];
-                [self.btnThemScoreB setHidden:YES];
-                
-                [self.btnUsScoreC setHidden:NO];
-                [self.btnUsScoreD setHidden:NO];
-                [self.btnThemScoreC setHidden:NO];
-                [self.btnThemScoreD setHidden:NO];
-            } else {
-                [self.grp2 setHidden:NO];
-                [self.grp3 setHidden:YES];
-                
-                [self.btnUsScoreB setHidden:NO];
-                [self.btnUndoB setHidden:NO];
-                [self.btnThemScoreB setHidden:NO];
-                
-                [self.btnUsScoreC setHidden:YES];
-                [self.btnUsScoreD setHidden:YES];
-                [self.btnThemScoreC setHidden:YES];
-                [self.btnThemScoreD setHidden:YES];
-            }
-        } else {
-            [self.grp1 setHidden:NO];
-            [self.grp2 setHidden:YES];
-            [self.grp3 setHidden:YES];
-            
-            [self.btnUndoA setHidden:NO];
-            
-            [self.btnUsScoreB setHidden:YES];
-            [self.btnUndoB setHidden:YES];
-            [self.btnThemScoreB setHidden:YES];
-            
-            [self.btnUsScoreC setHidden:YES];
-            [self.btnUsScoreD setHidden:YES];
-            [self.btnThemScoreC setHidden:YES];
-            [self.btnThemScoreD setHidden:YES];
+        // make sure tertiary values are consistent
+        if ([self.userDefaults objectForKey:@"currentSportScoreTypeGname"] == nil || [[self.userDefaults objectForKey:@"currentSportScoreTypeGname"] isEqualToString:@""] || [self.userDefaults objectForKey:@"currentSportScoreTypeGpoints"] == nil) {
+
+            [self.userDefaults setObject:@"" forKey:@"currentSportScoreTypeGname"];
+            [self.userDefaults setObject:@0 forKey:@"currentSportScoreTypeGpoints"];
         }
     }
+    
     [self updateTimerStatus:TIMER_UPDATE_MODE_INIT];
 }
 
@@ -220,8 +191,14 @@
     if ([self.userDefaults objectForKey:@"currentSportScoreTypeEname"] != nil) {
         [self.btnUsScoreA setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
         [self.btnThemScoreA setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
+        
+        [self.btnUsScoreAAlt setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
+        [self.btnThemScoreAAlt setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeEname"]];
     }
+    
     if ([self.userDefaults objectForKey:@"currentSportScoreTypeFname"] != nil && ![[self.userDefaults objectForKey:@"currentSportScoreTypeFname"] isEqualToString:@""]) {
+        [self.grp1 setHidden:YES];
+        [self.btnUndoA setHidden:YES];
         
         if ([self.userDefaults objectForKey:@"currentSportScoreTypeGname"] != nil && ![[self.userDefaults objectForKey:@"currentSportScoreTypeGname"] isEqualToString:@""]) {
             
@@ -230,7 +207,16 @@
             [self.btnThemScoreC setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
             [self.btnThemScoreD setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeGname"]];
             
+            [self.btnUsScoreA setHidden:YES];
+            [self.btnThemScoreA setHidden:YES];
+            [self.grp0 setHidden:YES];
+            
+            [self.btnUsScoreAAlt setHidden:NO];
+            [self.btnThemScoreAAlt setHidden:NO];
+            [self.grp0Alt setHidden:NO];
+            
             [self.btnUsScoreB setHidden:YES];
+            [self.btnUndoB setHidden:YES];
             [self.btnThemScoreB setHidden:YES];
             [self.grp2 setHidden:YES];
             
@@ -243,7 +229,16 @@
             [self.btnUsScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
             [self.btnThemScoreB setTitle:[self.userDefaults objectForKey:@"currentSportScoreTypeFname"]];
             
+            [self.btnUsScoreA setHidden:NO];
+            [self.btnThemScoreA setHidden:NO];
+            [self.grp0 setHidden:NO];
+            
+            [self.btnUsScoreAAlt setHidden:YES];
+            [self.btnThemScoreAAlt setHidden:YES];
+            [self.grp0Alt setHidden:YES];
+            
             [self.btnUsScoreB setHidden:NO];
+            [self.btnUndoB setHidden:NO];
             [self.btnThemScoreB setHidden:NO];
             [self.grp2 setHidden:NO];
             
@@ -254,13 +249,27 @@
             [self.grp3 setHidden:YES];
         }
     } else {
+        [self.btnUsScoreA setHidden:NO];
+        [self.btnThemScoreA setHidden:NO];
+        [self.grp0 setHidden:NO];
+        
+        [self.btnUsScoreAAlt setHidden:YES];
+        [self.btnThemScoreAAlt setHidden:YES];
+        [self.grp0Alt setHidden:YES];
+        
+        [self.btnUndoA setHidden:NO];
+        [self.grp1 setHidden:NO];
+        
         [self.btnUsScoreB setHidden:YES];
+        [self.btnUndoB setHidden:YES];
         [self.btnThemScoreB setHidden:YES];
+        [self.grp2 setHidden:YES];
         
         [self.btnUsScoreC setHidden:YES];
         [self.btnUsScoreD setHidden:YES];
         [self.btnThemScoreC setHidden:YES];
         [self.btnThemScoreD setHidden:YES];
+        [self.grp3 setHidden:YES];
     }
 }
 
@@ -385,6 +394,20 @@
     }
 }
 
+- (IBAction)tchUsScoreAAlt {
+    [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"]];
+}
+
+- (IBAction)tchThemScoreAAlt {
+    [self updateScoreThem:[self.userDefaults objectForKey:@"currentSportScoreTypeEpoints"]];
+}
+
+- (IBAction)tchUndoAAlt {
+    if ([self.undoManager canUndo]) {
+        [self.undoManager undo];
+    }
+}
+
 - (IBAction)tchUsScoreB {
     [self updateScoreUs:[self.userDefaults objectForKey:@"currentSportScoreTypeFpoints"]];
 }
@@ -435,6 +458,8 @@
 
     [self.userDefaults setObject:newScore forKey:@"gameScoreThem"];
     [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
+    
+    [self requestDefaults];
 }
 
 @end

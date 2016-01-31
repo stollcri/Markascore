@@ -36,7 +36,7 @@
                                 </mask>
                             </variation>
                         </group>
-                        <group width="1" alignment="left" id="z2c-vL-pdu">
+                        <group width="1" alignment="center" id="z2c-vL-pdu">
                             <items>
                                 <label width="64" alignment="left" text="0" textAlignment="center" id="dlL-wB-2Z1">
                                     <fontDescription key="font" type="boldSystem" pointSize="22"/>
@@ -48,35 +48,57 @@
                                 </label>
                             </items>
                         </group>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="U6N-lL-yLB">
+                        <group width="1" height="36" alignment="center" verticalAlignment="bottom" spacing="4" id="U6N-lL-yLB">
                             <items>
-                                <button width="32" alignment="left" verticalAlignment="center" title="X" id="4hS-FL-KPf">
-                                    <variation key="device=watch42mm" width="37"/>
+                                <button width="31" alignment="left" verticalAlignment="center" title="X" id="4hS-FL-KPf">
+                                    <variation key="device=watch42mm" width="36"/>
                                     <connections>
                                         <action selector="tchUsScoreC" destination="AgC-eL-Hgc" id="Tid-gA-QpP"/>
                                     </connections>
                                 </button>
-                                <button width="32" alignment="left" verticalAlignment="center" title="Y" id="oax-Vj-Ruj">
-                                    <variation key="device=watch42mm" width="37"/>
+                                <button width="30" alignment="left" verticalAlignment="center" title="Y" id="oax-Vj-Ruj">
+                                    <variation key="device=watch42mm" width="35"/>
                                     <connections>
                                         <action selector="tchUsScoreD" destination="AgC-eL-Hgc" id="VUM-4c-8iI"/>
                                     </connections>
                                 </button>
-                                <button width="32" alignment="right" verticalAlignment="center" title="Y" id="iBL-sm-XnT">
-                                    <variation key="device=watch42mm" width="37"/>
+                                <button width="30" alignment="right" verticalAlignment="center" title="Y" id="iBL-sm-XnT">
+                                    <variation key="device=watch42mm" width="35"/>
                                     <connections>
                                         <action selector="tchThemScoreD" destination="AgC-eL-Hgc" id="BRt-Be-wVO"/>
                                     </connections>
                                 </button>
-                                <button width="32" alignment="right" verticalAlignment="center" title="X" id="4lE-Pl-4p0">
-                                    <variation key="device=watch42mm" width="37"/>
+                                <button width="31" alignment="right" verticalAlignment="center" title="X" id="4lE-Pl-4p0">
+                                    <variation key="device=watch42mm" width="36"/>
                                     <connections>
                                         <action selector="tchThemScoreC" destination="AgC-eL-Hgc" id="4Zt-hw-ce2"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="0OU-Zq-v6a">
+                        <group width="1" height="36" alignment="center" verticalAlignment="bottom" id="i5a-af-CXY">
+                            <items>
+                                <button width="42" alignment="left" verticalAlignment="center" title="S" id="yGw-bM-Bk9">
+                                    <variation key="device=watch42mm" width="49"/>
+                                    <connections>
+                                        <action selector="tchUsScoreAAlt" destination="AgC-eL-Hgc" id="wGb-2M-AKU"/>
+                                    </connections>
+                                </button>
+                                <button width="42" alignment="center" verticalAlignment="center" title="❌" id="Yfv-FE-hps">
+                                    <variation key="device=watch42mm" width="49"/>
+                                    <connections>
+                                        <action selector="tchUndoAAlt" destination="AgC-eL-Hgc" id="Osr-xk-vds"/>
+                                    </connections>
+                                </button>
+                                <button width="42" alignment="right" verticalAlignment="center" title="S" id="TYa-Do-0sZ">
+                                    <variation key="device=watch42mm" width="49"/>
+                                    <connections>
+                                        <action selector="tchThemScoreAAlt" destination="AgC-eL-Hgc" id="QDu-AC-Lfi"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="36" alignment="center" verticalAlignment="bottom" id="0OU-Zq-v6a">
                             <items>
                                 <button width="42" alignment="left" verticalAlignment="center" title="X" id="y6W-5Z-sfo">
                                     <variation key="device=watch42mm" width="49"/>
@@ -98,16 +120,17 @@
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="i2V-Ag-Apj">
+                        <group width="1" height="36" alignment="center" verticalAlignment="bottom" id="i2V-Ag-Apj">
                             <items>
-                                <button width="1" alignment="left" verticalAlignment="center" title="❌" id="R0x-Gs-VHU">
+                                <button width="65" alignment="center" verticalAlignment="center" title="❌" id="R0x-Gs-VHU">
+                                    <variation key="device=watch42mm" width="75"/>
                                     <connections>
                                         <action selector="tchUndoA" destination="AgC-eL-Hgc" id="H4e-E0-54L"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="7fx-b2-26i">
+                        <group width="1" height="36" alignment="center" verticalAlignment="bottom" id="7fx-b2-26i">
                             <items>
                                 <button width="65" alignment="left" verticalAlignment="center" title="Score" id="XDA-Le-5IN">
                                     <variation key="device=watch42mm" width="75"/>
@@ -160,16 +183,20 @@
                     </variation>
                     <connections>
                         <outlet property="btnThemScoreA" destination="hWg-VE-uU5" id="Ni6-aB-0S4"/>
+                        <outlet property="btnThemScoreAAlt" destination="TYa-Do-0sZ" id="QNy-bW-WpQ"/>
                         <outlet property="btnThemScoreB" destination="q4E-wk-hb9" id="Sya-vy-tFE"/>
                         <outlet property="btnThemScoreC" destination="4lE-Pl-4p0" id="EsP-gq-g4E"/>
                         <outlet property="btnThemScoreD" destination="iBL-sm-XnT" id="kpK-kk-gpT"/>
                         <outlet property="btnUndoA" destination="R0x-Gs-VHU" id="PAs-Df-xpl"/>
+                        <outlet property="btnUndoAAlt" destination="Yfv-FE-hps" id="Ccp-kj-iKe"/>
                         <outlet property="btnUndoB" destination="7a5-un-hRw" id="DgO-ck-AJ7"/>
                         <outlet property="btnUsScoreA" destination="XDA-Le-5IN" id="fDA-WY-ruq"/>
+                        <outlet property="btnUsScoreAAlt" destination="yGw-bM-Bk9" id="lZh-9G-s3d"/>
                         <outlet property="btnUsScoreB" destination="y6W-5Z-sfo" id="KWd-IL-IEV"/>
                         <outlet property="btnUsScoreC" destination="4hS-FL-KPf" id="foW-aZ-jRI"/>
                         <outlet property="btnUsScoreD" destination="oax-Vj-Ruj" id="UpD-bj-uJP"/>
                         <outlet property="grp0" destination="7fx-b2-26i" id="h4V-05-WyL"/>
+                        <outlet property="grp0Alt" destination="i5a-af-CXY" id="KpC-u7-0Ia"/>
                         <outlet property="grp1" destination="i2V-Ag-Apj" id="Ng1-Ig-DGv"/>
                         <outlet property="grp2" destination="0OU-Zq-v6a" id="NG9-TO-7az"/>
                         <outlet property="grp3" destination="U6N-lL-yLB" id="c5n-Mc-gXw"/>

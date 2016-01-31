@@ -28,6 +28,10 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreA;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUndoA;
 
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreAAlt;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreAAlt;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUndoAAlt;
+
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUsScoreB;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnUndoB;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *btnThemScoreB;
@@ -41,10 +45,15 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp3;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp1;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp0;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceGroup *grp0Alt;
 
 - (IBAction)tchUsScoreA;
 - (IBAction)tchThemScoreA;
 - (IBAction)tchUndoA;
+
+- (IBAction)tchUsScoreAAlt;
+- (IBAction)tchThemScoreAAlt;
+- (IBAction)tchUndoAAlt;
 
 - (IBAction)tchUsScoreB;
 - (IBAction)tchUndoB;
