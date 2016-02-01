@@ -108,13 +108,13 @@
         case CLKComplicationFamilyUtilitarianLarge: {
             NSString *tmpNameUs = [[NSString alloc] init];
             NSString *tmpNameThem = [[NSString alloc] init];
-            if ([nameUs length] > 6) {
-                tmpNameUs = [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 6)]];
+            if ([nameUs length] > 8) {
+                tmpNameUs = [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 8)]];
             } else {
                 tmpNameUs = nameUs;
             }
-            if ([nameThem length] > 6) {
-                tmpNameThem = [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 6)]];
+            if ([nameThem length] > 8) {
+                tmpNameThem = [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 8)]];
             } else {
                 tmpNameThem = nameThem;
             }
