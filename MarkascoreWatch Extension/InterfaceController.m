@@ -274,9 +274,11 @@
 }
 
 - (void)updateComplicationScore {
-    //NSLog(@"updateComplicationScore");
     CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance];
     for (CLKComplication *complication in complicationServer.activeComplications) {
+        //
+        // TODO: add to existing timeline
+        //
         [complicationServer reloadTimelineForComplication:complication];
     }
 }

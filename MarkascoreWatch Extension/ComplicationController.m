@@ -37,7 +37,6 @@
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
     // Call the handler with the current timeline entry
     //handler(nil);
-    //NSLog(@"getCurrentTimelineEntryForComplication");
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *nameUs = [userDefaults objectForKey:@"teamA"];
@@ -71,8 +70,6 @@
             
             NSString *textUs = [NSString stringWithFormat:@"%@ - %@", tmpNameUs, scoreUs];
             NSString *textThem = [NSString stringWithFormat:@"%@ - %@", tmpNameThem, scoreThem];
-            //NSLog(@"ML textUs:   %@", textUs);
-            //NSLog(@"ML textThem: %@", textThem);
             
             CLKComplicationTemplateModularLargeStandardBody *modularTemplate = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
             modularTemplate.headerTextProvider = [CLKSimpleTextProvider textProviderWithText:@"Markascore"];
@@ -95,7 +92,6 @@
             } else {
                 textScores = [NSString stringWithFormat:@"%@ %@ - %@ %@", [nameUs substringWithRange:[nameUs rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]], scoreUs, scoreThem, [nameThem substringWithRange:[nameThem rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 1)]]];
             }
-            //NSLog(@"US textUs: %@", textScores);
             
             CLKComplicationTemplateUtilitarianSmallFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianSmallFlat alloc] init];
             modularTemplate.textProvider = [CLKSimpleTextProvider textProviderWithText:textScores];
@@ -119,7 +115,6 @@
                 tmpNameThem = nameThem;
             }
             NSString *textScores = [NSString stringWithFormat:@"%@ %@ - %@ %@", tmpNameUs, scoreUs, scoreThem, tmpNameThem];
-            //NSLog(@"UL textUs: %@", textScores);
             
             CLKComplicationTemplateUtilitarianLargeFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianLargeFlat alloc] init];
             modularTemplate.textProvider = [CLKSimpleTextProvider textProviderWithText:textScores];
@@ -165,55 +160,6 @@
 - (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
     // This method will be called once per supported complication, and the results will be cached
     handler(nil);
-    //NSLog(@"getPlaceholderTemplateForComplication");
-    /*
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *nameUs = [userDefaults objectForKey:@"teamA"];
-    NSString *nameThem = [userDefaults objectForKey:@"teamB"];
-    NSString *scoreUs = [[userDefaults objectForKey:@"gameScoreUs"] stringValue];
-    NSString *scoreThem =[[userDefaults objectForKey:@"gameScoreThem"] stringValue];
-    
-    CLKComplicationTemplate *template = nil;
-    switch (complication.family) {
-        case CLKComplicationFamilyCircularSmall:
-            //
-            break;
-        case CLKComplicationFamilyModularSmall:
-            //
-            break;
-        case CLKComplicationFamilyModularLarge: {
-            NSString *textUs = [NSString stringWithFormat:@"%@ -|- %@", nameUs, scoreUs];
-            NSString *textThem = [NSString stringWithFormat:@"%@ -|- %@", nameThem, scoreThem];
-            NSLog(@"ML textUs:   %@", textUs);
-            NSLog(@"ML textThem: %@", textThem);
-            
-            CLKComplicationTemplateModularLargeStandardBody *modularTemplate = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
-            modularTemplate.headerTextProvider = [CLKSimpleTextProvider textProviderWithText:@"Markascore"];
-            modularTemplate.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:textUs];
-            modularTemplate.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:textThem];
-            break;
-        }
-        case CLKComplicationFamilyUtilitarianSmall: {
-            NSString *textScores = [NSString stringWithFormat:@"%@ -|- %@", scoreUs, scoreThem];
-            NSLog(@"US textUs: %@", textScores);
-            
-            CLKComplicationTemplateUtilitarianSmallFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianSmallFlat alloc] init];
-            modularTemplate.textProvider = [CLKSimpleTextProvider textProviderWithText:textScores];
-            break;
-        }
-        case CLKComplicationFamilyUtilitarianLarge: {
-            NSString *textScores = [NSString stringWithFormat:@"%@ -|- %@", scoreUs, scoreThem];
-            NSLog(@"US textUs: %@", textScores);
-            
-            CLKComplicationTemplateUtilitarianLargeFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianLargeFlat alloc] init];
-            modularTemplate.textProvider = [CLKSimpleTextProvider textProviderWithText:textScores];
-            break;
-        }
-        default:
-            break;
-    }
-    handler(template);
-    */
 }
 
 @end

@@ -26,8 +26,6 @@
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
         [session activateSession];
-    } else {
-        //NSLog(@"WCSession is NOT Supported");
     }
     
     return YES;
@@ -141,7 +139,6 @@
 #pragma mark - Watch connectivity
 
 - (NSDictionary *)prepareDataforWatch {
-    //NSLog(@"prepareDataforWatach");
     NSMutableDictionary *watchData = [[NSMutableDictionary alloc] init];
 
     
@@ -216,7 +213,6 @@
              */
             
             if ([moSport.name isEqualToString:[watchData objectForKey:@"gameSport"]]) {
-                //NSLog(@"OK");
                 [watchData setObject:moSport.name forKey:@"currentSportName"];
                 [watchData setObject:moSport.periodQuantity forKey:@"currentSportPeriodQuantity"];
                 [watchData setObject:moSport.periodTime forKey:@"currentSportPeriodTime"];
@@ -240,7 +236,6 @@
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
     NSString *commandValue = [message objectForKey:@"command"];
-    //NSLog(@"iPhone: didReceiveMessage (%@)", commandValue);
     
     if ([commandValue isEqualToString:@"SendAppCoreData"]) {
         NSDictionary *appCoreData = [self prepareDataforWatch];

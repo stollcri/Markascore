@@ -42,16 +42,6 @@
         self.currentOptions = moOptions;
     }
     
-    /*
-    if ([WCSession isSupported]) {
-        WCSession *session = [WCSession defaultSession];
-        if (session.paired && session.watchAppInstalled) {
-            self.currentOptions.hasWatch = @YES;
-            NSLog(@"Watch paired: %d, Watch app installed: %d", session.paired, session.watchAppInstalled);
-        }
-    }
-    */
-    
     // Fetch saved game data -- what was the last score time, etc.
     NSEntityDescription *gameEntity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:context];
     [fetch setEntity:gameEntity];
@@ -61,7 +51,6 @@
     // Found saved game data
     if ([fetchedObjects count] == 1) {
         self.currentGame = [fetchedObjects objectAtIndex:0];
-        //NSLog(@"Game fetched %@", self.currentGame.sportName);
         
             // Fetch sport details for the saved game
             NSEntityDescription *sportEntity = [NSEntityDescription entityForName:@"Sport"  inManagedObjectContext: context];
@@ -72,9 +61,6 @@
         
             if ([fetchedObjects count] == 1) {
                 self.currentSport = [fetchedObjects objectAtIndex:0];
-                //NSLog(@"Sport fetched %@", self.currentSport.name);
-            } else {
-                //NSLog(@"Sport NOT fetched");
             }
     // No saved game data (probably first time run)
     } else {
@@ -94,14 +80,7 @@
         moGame.timeSaveMinutes = @0;
         moGame.timeSaveSeconds = @0;
         self.currentGame = moGame;
-        //NSLog(@"Game NOT fetched");
     }
-
-//    // If there is a sport selected
-//    if (self.currentSport) {
-//        // then update the UI to match
-//        [self updateUI];
-//    }
     
     // TODO: check on this implementation
     NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(updateTimeFromTimer:) userInfo:nil repeats:YES];
@@ -358,8 +337,6 @@
                     NSNumber *cumMinutes = @([self.currentGame.timeSaveMinutes intValue] + floor(timeDiff/60));
                     NSNumber *cumSeconds = @((60 - [self.currentGame.timeSaveSeconds intValue]) + round(timeDiff - floor(timeDiff / 60) * 60));
                     
-                    NSLog(@"%@:%@", cumMinutes, cumSeconds);
-                    
                     if ([cumSeconds intValue] > 60) {
                         cumMinutes = @([cumMinutes intValue] + 1);
                         cumSeconds = @([cumSeconds intValue] - 60);
@@ -550,73 +527,5 @@
         [self.undoManager undo];
     }
 }
-
-//#pragma mark - WatchKit
-//
-//- (NSDictionary *)prepareDataforWatch {
-//    NSMutableDictionary *watchData = [[NSMutableDictionary alloc] init];
-//    
-//    [watchData setObject:self.currentOptions.teamA forKey:@"teamA"];
-//    [watchData setObject:self.currentOptions.teamB forKey:@"teamB"];
-//    
-//    [watchData setObject:self.currentGame.sportName forKey:@"gameSport"];
-//    [watchData setObject:self.currentGame.period forKey:@"gamePeriod"];
-//    [watchData setObject:self.currentGame.scoreUs forKey:@"gameScoreUs"];
-//    [watchData setObject:self.currentGame.scoreThem forKey:@"gameScoreThem"];
-//    [watchData setObject:self.currentGame.timeCountUp forKey:@"gameTimeCountUp"];
-//    [watchData setObject:self.currentGame.timeCountUpCum forKey:@"gameTimeCountUpCum"];
-//    [watchData setObject:self.currentGame.timeElapsedMinutes forKey:@"gametimeElapsedMinutes"];
-//    [watchData setObject:self.currentGame.timeElapsedSeconds forKey:@"gametimeElapsedSeconds"];
-//    [watchData setObject:self.currentGame.timeRunning forKey:@"gameTimeRunning"];
-//    [watchData setObject:self.currentGame.timeStartedAt forKey:@"gameTimeStartedAt"];
-//    [watchData setObject:self.currentGame.timeSaveMinutes forKey:@"gameTimeSaveMinutes"];
-//    [watchData setObject:self.currentGame.timeSaveSeconds forKey:@"gameTimeSaveSeconds"];
-//    
-//    NSManagedObjectContext *context = [self managedObjectContext];
-//    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *sportsEntity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:context];
-//    [fetch setEntity:sportsEntity];
-//    NSError *error = nil;
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetch error:&error];
-//    Sport *moSport;
-//    NSMutableArray *sportsList = [[NSMutableArray alloc] init];
-//    if ([fetchedObjects count] > 0) {
-//        for (moSport in fetchedObjects) {
-//            NSMutableDictionary *currentGame = [[NSMutableDictionary alloc] init];
-//            [currentGame setObject:moSport.name forKey:@"name"];
-//            [currentGame setObject:moSport.periodQuantity forKey:@"periodQuantity"];
-//            [currentGame setObject:moSport.periodTime forKey:@"periodTime"];
-//            [currentGame setObject:moSport.scoreTypeEname forKey:@"scoreTypeEname"];
-//            [currentGame setObject:moSport.scoreTypeEpoints forKey:@"scoreTypeEpoints"];
-//            [currentGame setObject:moSport.scoreTypeFname forKey:@"scoreTypeFname"];
-//            [currentGame setObject:moSport.scoreTypeFpoints forKey:@"scoreTypeFpoints"];
-//            [currentGame setObject:moSport.periodTimeUp forKey:@"periodTimeUp"];
-//            [currentGame setObject:moSport.periodTimeUpCum forKey:@"periodTimeUpCum"];
-//            [sportsList addObject:currentGame];
-//        }
-//    } else {
-//        NSLog(@"Error reading sports");
-//    }
-//    NSArray *sports = [sportsList copy];
-//    [watchData setObject:sports forKey:@"sports"];
-//    
-//    return watchData;
-//}
-//
-//- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler {
-//    NSLog(@"iPhone: didReceiveMessage");
-//    
-//    NSString *commandValue = [message objectForKey:@"command"];
-//    if ([commandValue isEqualToString:@"SendAppCoreData"]) {
-////        NSDictionary *appCoreData = [self prepareDataforWatch];
-////        replyHandler(appCoreData);
-//    }
-//    
-////    //Use this to update the UI instantaneously (otherwise, takes a little while)
-////    dispatch_async(dispatch_get_main_queue(), ^{
-////        [self.counterData addObject:counterValue];
-////        [self.mainTableView reloadData];
-////    });
-//}
 
 @end
