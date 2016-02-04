@@ -147,6 +147,12 @@
     if ([self.userDefaults objectForKey:@"gameScoreThem"] == nil) {
         [self.userDefaults setObject:@0 forKey:@"gameScoreThem"];
     }
+    if ([self.userDefaults objectForKey:@"gameScoresTimeline"] == nil) {
+        NSDate *dateNow = [NSDate date];
+        NSDictionary *initialScore = [[NSDictionary alloc] initWithObjectsAndKeys:dateNow, @"datetime", @0, @"scoreUs", @0, @"scoreThem", nil];
+        NSMutableArray *gameScoresTimeline = [[NSMutableArray alloc] initWithObjects:initialScore, nil];
+        [self.userDefaults setObject:gameScoresTimeline forKey:@"gameScoresTimeline"];
+    }
     
     if ([self.userDefaults objectForKey:@"gameTimeCountUp"] == nil) {
         [self.userDefaults setObject:@YES forKey:@"gameTimeCountUp"];
@@ -274,12 +280,17 @@
 }
 
 - (void)updateComplicationScore {
+//    NSLog(@"updateComplicationScore");
     CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance];
     for (CLKComplication *complication in complicationServer.activeComplications) {
-        //
+        // 
         // TODO: add to existing timeline
         //
         [complicationServer reloadTimelineForComplication:complication];
+        //
+        // TODO: this isn't working?
+        //
+        //[complicationServer extendTimelineForComplication:complication];
     }
 }
 
@@ -288,6 +299,7 @@
         NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreUs"] intValue] - [increment intValue]);
         [self.userDefaults setObject:newScore forKey:@"gameScoreUs"];
         [self.labUsScore setText:[[self.userDefaults objectForKey:@"gameScoreUs"] stringValue]];
+        [self gameScoresTimelineRemoveLastScore];
     }
 }
 
@@ -296,6 +308,7 @@
     NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreUs"] intValue] + [increment intValue]);
     [self.userDefaults setObject:newScore forKey:@"gameScoreUs"];
     [self.labUsScore setText:[[self.userDefaults objectForKey:@"gameScoreUs"] stringValue]];
+    [self gameScoresTimelineUpdateScoreUs:newScore andThem:[self.userDefaults objectForKey:@"gameScoreThem"]];
 }
 
 - (void)undoScoreThem:(NSNumber*)increment {
@@ -303,6 +316,7 @@
         NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreThem"] intValue] - [increment intValue]);
         [self.userDefaults setObject:newScore forKey:@"gameScoreThem"];
         [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
+        [self gameScoresTimelineRemoveLastScore];
     }
 }
 
@@ -311,6 +325,22 @@
     NSNumber *newScore = @([[self.userDefaults objectForKey:@"gameScoreThem"] intValue] + [increment intValue]);
     [self.userDefaults setObject:newScore forKey:@"gameScoreThem"];
     [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
+    [self gameScoresTimelineUpdateScoreUs:[self.userDefaults objectForKey:@"gameScoreUs"] andThem:newScore];
+}
+
+- (void)gameScoresTimelineRemoveLastScore {
+    NSMutableArray *gameScoresTimeline = [NSMutableArray arrayWithArray:[self.userDefaults objectForKey:@"gameScoresTimeline"]];
+    [gameScoresTimeline removeLastObject];
+    [self.userDefaults setObject:gameScoresTimeline forKey:@"gameScoresTimeline"];
+}
+
+- (void)gameScoresTimelineUpdateScoreUs:(NSNumber*)scoreUs andThem:(NSNumber*)scoreThem {
+    NSDate *dateNow = [NSDate date];
+    NSDictionary *newScores = [[NSDictionary alloc] initWithObjectsAndKeys:dateNow, @"datetime", scoreUs, @"scoreUs", scoreThem, @"scoreThem", nil];
+    NSMutableArray *gameScoresTimeline = [NSMutableArray arrayWithArray:[self.userDefaults objectForKey:@"gameScoresTimeline"]];
+    [gameScoresTimeline addObject:newScores];
+//    NSLog(@"(add) %@ (%@ - %@)", dateNow, scoreUs, scoreThem);
+    [self.userDefaults setObject:gameScoresTimeline forKey:@"gameScoresTimeline"];
 }
 
 - (void)updateTimerStatus:(int)mode {
@@ -460,6 +490,16 @@
 
     [self.userDefaults setObject:newScore forKey:@"gameScoreThem"];
     [self.labThemScore setText:[[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
+    
+    NSDate *dateNow = [NSDate date];
+    NSDictionary *initialScore = [[NSDictionary alloc] initWithObjectsAndKeys:dateNow, @"datetime", @0, @"scoreUs", @0, @"scoreThem", nil];
+    NSMutableArray *gameScoresTimeline = [[NSMutableArray alloc] initWithObjects:initialScore, nil];
+    [self.userDefaults setObject:gameScoresTimeline forKey:@"gameScoresTimeline"];
+    
+    CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance];
+    for (CLKComplication *complication in complicationServer.activeComplications) {
+        [complicationServer reloadTimelineForComplication:complication];
+    }
     
     [self requestDefaults];
 }

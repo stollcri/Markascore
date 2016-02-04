@@ -17,15 +17,27 @@
 #pragma mark - Timeline Configuration
 
 - (void)getSupportedTimeTravelDirectionsForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimeTravelDirections directions))handler {
-    handler(CLKComplicationTimeTravelDirectionForward|CLKComplicationTimeTravelDirectionBackward);
+    handler(CLKComplicationTimeTravelDirectionBackward);
 }
 
 - (void)getTimelineStartDateForComplication:(CLKComplication *)complication withHandler:(void(^)(NSDate * __nullable date))handler {
-    handler(nil);
+//    handler(nil);
+//    NSLog(@"getTimelineStartDateForComplication");
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *gameScoresTimeline = [userDefaults objectForKey:@"gameScoresTimeline"];
+    NSDictionary *firstGameScore = [gameScoresTimeline firstObject];
+    NSDate *firstScore = [firstGameScore objectForKey:@"datetime"];
+    handler(firstScore);
 }
 
 - (void)getTimelineEndDateForComplication:(CLKComplication *)complication withHandler:(void(^)(NSDate * __nullable date))handler {
-    handler(nil);
+//    handler(nil);
+//    NSLog(@"getTimelineEndDateForComplication");
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *gameScoresTimeline = [userDefaults objectForKey:@"gameScoresTimeline"];
+    NSDictionary *lastGameScore = [gameScoresTimeline lastObject];
+    NSDate *lastScore = [lastGameScore objectForKey:@"datetime"];
+    handler(lastScore);
 }
 
 - (void)getPrivacyBehaviorForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationPrivacyBehavior privacyBehavior))handler {
@@ -36,13 +48,88 @@
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
     // Call the handler with the current timeline entry
-    //handler(nil);
+//    NSLog(@"getCurrentTimelineEntryForComplication");
+    handler([self formatComplicationTimelineEntry:complication]);
+}
+
+- (void)getTimelineEntriesForComplication:(CLKComplication *)complication beforeDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
+    // Call the handler with the timeline entries prior to the given date
+//     NSLog(@"getTimelineEntriesForComplication beforeDate %@", date);
+//    handler(nil);
     
+    NSMutableArray *timelineEntries = [[NSMutableArray alloc] init];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *gameScoresTimeline = [userDefaults objectForKey:@"gameScoresTimeline"];
+    for (NSDictionary *currentGameScore in gameScoresTimeline) {
+        NSDate *currentScoreDate = [currentGameScore objectForKey:@"datetime"];
+        if ([currentScoreDate compare:date] == NSOrderedAscending) {
+            NSString *scoreUs = [[currentGameScore objectForKey:@"scoreUs"] stringValue];
+            NSString *scoreThem = [[currentGameScore objectForKey:@"scoreThem"] stringValue];
+            CLKComplicationTimelineEntry *timelineEntry = [self formatComplicationTimelineEntry:complication withDate:currentScoreDate andScoreUs:scoreUs andScoreThem:scoreThem];
+            [timelineEntries addObject:timelineEntry];
+        } else {
+            break;
+        }
+    }
+    handler(timelineEntries);
+}
+
+- (void)getTimelineEntriesForComplication:(CLKComplication *)complication afterDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
+    // Call the handler with the timeline entries after to the given date
+//    NSLog(@"getTimelineEntriesForComplication afterDate %@", date);
+//    handler(nil);
+    
+    NSMutableArray *timelineEntries = [[NSMutableArray alloc] init];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *gameScoresTimeline = [userDefaults objectForKey:@"gameScoresTimeline"];
+    for (NSDictionary *currentGameScore in gameScoresTimeline) {
+        NSDate *currentScoreDate = [currentGameScore objectForKey:@"datetime"];
+        if ([currentScoreDate compare:date] == NSOrderedDescending) {
+            NSString *scoreUs = [[currentGameScore objectForKey:@"scoreUs"] stringValue];
+            NSString *scoreThem = [[currentGameScore objectForKey:@"scoreThem"] stringValue];
+            CLKComplicationTimelineEntry *timelineEntry = [self formatComplicationTimelineEntry:complication withDate:currentScoreDate andScoreUs:scoreUs andScoreThem:scoreThem];
+            [timelineEntries addObject:timelineEntry];
+        } else {
+            break;
+        }
+    }
+    handler(timelineEntries);
+}
+
+#pragma mark Update Scheduling
+
+- (void)getNextRequestedUpdateDateWithHandler:(void(^)(NSDate * __nullable updateDate))handler {
+    // Call the handler with the date when you would next like to be given the opportunity to update your complication content
+    // The complication should be updated after the users uses the app
+//    NSLog(@"getNextRequestedUpdateDateWithHandler");
+    //
+    // TODO
+    //
+    handler([NSDate dateWithTimeIntervalSinceNow:60*60*24]);
+}
+
+#pragma mark - Placeholder Templates
+
+- (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
+    // This method will be called once per supported complication, and the results will be cached
+//    NSLog(@"getPlaceholderTemplateForComplication");
+    handler(nil);
+}
+
+#pragma mark - Timeline Entry Format
+
+- (CLKComplicationTimelineEntry*)formatComplicationTimelineEntry:(CLKComplication*)complication {
+    NSDate *dateNow = [NSDate date];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *scoreUs = [[userDefaults objectForKey:@"gameScoreUs"] stringValue];
+    NSString *scoreThem =[[userDefaults objectForKey:@"gameScoreThem"] stringValue];
+    return [self formatComplicationTimelineEntry:complication withDate:dateNow andScoreUs:scoreUs andScoreThem:scoreThem];
+}
+
+- (CLKComplicationTimelineEntry*)formatComplicationTimelineEntry:(CLKComplication*)complication withDate:(NSDate*)date andScoreUs:(NSString*)scoreUs andScoreThem:(NSString*)scoreThem {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *nameUs = [userDefaults objectForKey:@"teamA"];
     NSString *nameThem = [userDefaults objectForKey:@"teamB"];
-    NSString *scoreUs = [[userDefaults objectForKey:@"gameScoreUs"] stringValue];
-    NSString *scoreThem =[[userDefaults objectForKey:@"gameScoreThem"] stringValue];
     
     //CLKComplicationTemplate *modularTemplate = nil;
     CLKComplicationTimelineEntry *timelineEntry = [[CLKComplicationTimelineEntry alloc] init];
@@ -76,7 +163,7 @@
             modularTemplate.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:textUs];
             modularTemplate.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:textThem];
             
-            timelineEntry.date = [NSDate date];
+            timelineEntry.date = date;
             timelineEntry.complicationTemplate = modularTemplate;
             timelineEntryDefined = YES;
             break;
@@ -96,7 +183,7 @@
             CLKComplicationTemplateUtilitarianSmallFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianSmallFlat alloc] init];
             modularTemplate.textProvider = [CLKSimpleTextProvider textProviderWithText:textScores];
             
-            timelineEntry.date = [NSDate date];
+            timelineEntry.date = date;
             timelineEntry.complicationTemplate = modularTemplate;
             timelineEntryDefined = YES;
             break;
@@ -119,7 +206,7 @@
             CLKComplicationTemplateUtilitarianLargeFlat *modularTemplate = [[CLKComplicationTemplateUtilitarianLargeFlat alloc] init];
             modularTemplate.textProvider = [CLKSimpleTextProvider textProviderWithText:textScores];
             
-            timelineEntry.date = [NSDate date];
+            timelineEntry.date = date;
             timelineEntry.complicationTemplate = modularTemplate;
             timelineEntryDefined = YES;
             break;
@@ -129,37 +216,10 @@
     }
     
     if (timelineEntryDefined) {
-        handler(timelineEntry);
+        return timelineEntry;
     } else {
-        handler(nil);
+        return nil;
     }
-}
-
-- (void)getTimelineEntriesForComplication:(CLKComplication *)complication beforeDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
-    // Call the handler with the timeline entries prior to the given date
-    handler(nil);
-}
-
-- (void)getTimelineEntriesForComplication:(CLKComplication *)complication afterDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
-    // Call the handler with the timeline entries after to the given date
-    handler(nil);
-}
-
-#pragma mark Update Scheduling
-
-- (void)getNextRequestedUpdateDateWithHandler:(void(^)(NSDate * __nullable updateDate))handler {
-    // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-    //handler(nil);
-    
-    handler([NSDate dateWithTimeIntervalSinceNow:60*15]);
-    //handler([NSDate dateWithTimeIntervalSinceNow:60*60]);
-}
-
-#pragma mark - Placeholder Templates
-
-- (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
-    // This method will be called once per supported complication, and the results will be cached
-    handler(nil);
 }
 
 @end
