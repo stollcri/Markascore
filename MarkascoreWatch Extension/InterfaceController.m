@@ -390,7 +390,7 @@
         // only start if stopped
         if (!self.timerRunning) {
             if (countUp) {
-                timeLeft = elapsedTime;
+                timeLeft = elapsedTime * -1;
             } else {
                 timeLeft = gameTimeInSecs - elapsedTime;
             }
