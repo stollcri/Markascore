@@ -68,5 +68,6 @@
 - (IBAction)tchPause;
 - (IBAction)tchRestart;
 - (IBAction)tchReset;
+- (IBAction)tchShare;
 
 @end

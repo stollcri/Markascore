@@ -383,6 +383,8 @@
             
             [self.userDefaults setObject:@(elapsedTime) forKey:@"gameTimeElapsed"];
             self.timerRunning = NO;
+            
+            
         }
         
     // start
@@ -471,7 +473,11 @@
 }
 
 - (IBAction)tchPlay {
-    [self updateTimerStatus:TIMER_UPDATE_MODE_START];
+    if (self.timerRunning) {
+        [self updateTimerStatus:TIMER_UPDATE_MODE_STOP];
+    } else {
+        [self updateTimerStatus:TIMER_UPDATE_MODE_START];
+    }
 }
 
 - (IBAction)tchPause {
@@ -502,6 +508,21 @@
     }
     
     [self requestDefaults];
+}
+
+- (IBAction)tchShare {
+    NSString *txtUs = [[NSString alloc] initWithFormat:@"%@ - %@", [self.userDefaults objectForKey:@"teamA"], [[self.userDefaults objectForKey:@"gameScoreUs"] stringValue]];
+    NSString *txtThem = [[NSString alloc] initWithFormat:@"%@ - %@", [self.userDefaults objectForKey:@"teamB"], [[self.userDefaults objectForKey:@"gameScoreThem"] stringValue]];
+    NSString *smsMessage = [[NSString alloc] initWithFormat:@"sms:&body=%@\n%@", txtUs, txtThem];
+    
+    //NSLog(@"%@", smsMessage);
+    //NSString *smsMessage = [txtBoth stringByReplacingOccurrencesOfString:@" " withString:@"%0A"];
+    //NSString *smsEscaped = [smsMessage stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *smsEscaped = [smsMessage stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    WKExtension *smsExtension = [WKExtension sharedExtension];
+    NSURL *smsUrl = [[NSURL alloc] initWithString:smsEscaped];
+    [smsExtension openSystemURL:smsUrl];
 }
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
@@ -149,7 +149,7 @@
                     </items>
                     <menu key="menu" id="bXG-Sc-sSv">
                         <items>
-                            <menuItem title="Play" icon="play" id="4Zv-MN-2ZD">
+                            <menuItem title="Play/Pause" icon="play" id="4Zv-MN-2ZD">
                                 <connections>
                                     <action selector="tchPlay" destination="AgC-eL-Hgc" id="y4H-3h-1bl"/>
                                 </connections>
@@ -159,7 +159,7 @@
                                     <action selector="tchPause" destination="AgC-eL-Hgc" id="taH-xA-YkJ"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Time" icon="repeat" id="LXr-fi-0Uo">
+                            <menuItem title="Time" icon="resume" id="LXr-fi-0Uo">
                                 <connections>
                                     <action selector="tchRestart" destination="AgC-eL-Hgc" id="Op6-td-rfa"/>
                                 </connections>
@@ -169,7 +169,17 @@
                                     <action selector="tchReset" destination="AgC-eL-Hgc" id="aw8-9F-uaN"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Share" icon="share" id="KI1-e5-xbH">
+                                <connections>
+                                    <action selector="tchShare" destination="AgC-eL-Hgc" id="YFu-Qn-Ghi"/>
+                                </connections>
+                            </menuItem>
                         </items>
+                        <variation key="default">
+                            <mask key="items">
+                                <exclude reference="6Kz-ep-Lbs"/>
+                            </mask>
+                        </variation>
                     </menu>
                     <variation key="default">
                         <mask key="items">
